@@ -73,12 +73,18 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
+    end
     # get 'users/index'
     # get 'users/show'
     # get 'users/edit'
     get 'users/unsubscribe'
+
     resources :users
   end
+
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
