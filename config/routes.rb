@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'homes/top'
   get 'homes/about'
+  get "search" => "searches#search"
+  get "search_result" => "searchs#search_result"
   root to: "homes#top"
 
   # 管理者

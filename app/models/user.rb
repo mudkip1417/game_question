@@ -6,6 +6,21 @@ class User < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
+  # 検索方法分岐
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @user = User.where("last_name LIKE?", "#{word}")
+    elsif search == "forward_match"
+      @user = User.where("last_name LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @user = User.where("last_name LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @user = User.where("last_name LIKE?","%#{word}%")
+    else
+      @user = User.all
+    end
+  end
+
   def self.guest
     find_or_create_by!(email: 'guest@guest',
                       last_name: 'guest',

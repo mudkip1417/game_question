@@ -4,6 +4,10 @@ class Public::QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def search_result
+    @question = Question.all
+  end
+
   def new
     @question = Question.new
   end
