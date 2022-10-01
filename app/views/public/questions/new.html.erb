@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="m-2 text-center">
+
+    <h1 class="h3 mb-2 font-weight-normal">質問投稿</h1>
+
+     <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
+
+        <div class="form-group">
+
+          <label for="item_name">ゲームタイトル</label>
+
+          <%= f.text_field :title, class:'form-control item_name' %>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="item_name">関連画像</label>
+
+          <%= f.file_field :image, accept: "image/*",  class:'form-control image' %>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="item_introduction">質問内容</label>
+
+          <%= f.text_area :question, class:'form-control item_intorduction' %>
+
+        </div>
+
+        <!--<div class="form-group">-->
+
+        <!--  <label for="item_introduction">Genre</label>-->
+
+          <%#= f.collection_select :genre_id, Genre.all,:id,:name,{promit:"--選択してください--"}, {class:'form-control item_genre'} %>
+
+        <!--</div>-->
+
+        <div class="form-group">
+
+          <%= f.submit '質問登録', class:'btn btn-success' %>
+
+        </div>
+
+      <% end %>
+
+  </div>
+
+</div>

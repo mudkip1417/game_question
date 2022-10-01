@@ -13,7 +13,7 @@ class Public::QuestionsController < ApplicationController
     @question.user_id = current_user.id
     @question.save
     # binding.pry
-    redirect_to admin_questions_path
+    redirect_to public_questions_path
   end
 
   def show
@@ -32,13 +32,13 @@ class Public::QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to admin_questions_path
+    redirect_to public_questions_path
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:title,:question,:game_id)
+    params.require(:question).permit(:title,:question,:game_id,:image)
   end
 
 end
