@@ -1,6 +1,8 @@
 class Question < ApplicationRecord
   has_one_attached :image
   belongs_to :user, dependent: :destroy
+  has_many :tagmaps, dependent: :destroy
+  has_many :tags, through: :tagmaps
 
   # 検索方法分岐
   def self.looks(search, word)
