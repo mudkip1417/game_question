@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get 'homes/top'
   get 'homes/about'
-  get "search" => "searches#search"
   get "search_result" => "searchs#search_result"
   root to: "homes#top"
 
@@ -72,6 +71,10 @@ Rails.application.routes.draw do
     # get 'groups/show'
     # get 'groups/edit'
     resources :groups
+  end
+
+  namespace :public do
+    get "search" => "searches#search"
   end
 
   namespace :public do
