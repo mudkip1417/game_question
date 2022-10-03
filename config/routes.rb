@@ -67,6 +67,10 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    resources :tags
+  end
+
+  namespace :public do
     # get 'groups/index'
     # get 'groups/show'
     # get 'groups/edit'
@@ -75,6 +79,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     get "search" => "searches#search"
+    get "search_tag" => "questions#search_tag"
   end
 
   namespace :public do

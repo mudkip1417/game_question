@@ -2,6 +2,22 @@
 
   <div class="container">
 
+    <% @tag_list.each do |list|%>
+    <%=list.tag_name %>
+    <% "(#{list.questions.count})" %>
+    <% end %>
+
+    <% @questions.each do |question| %>
+    <i class="fas fa-tag"><%= question.tags.map(&:tag_name).join(', ') %></i>
+    <% end %>
+
+    <% @tag_list.each do |list| %>
+      <%= link_to list.tag_name,public_search_path(tag_id: list.id) %>
+      <%= "(#{list.questions.count})" %>
+    <% end %>
+
+    <div><br></div>
+
     <div class="row">
 
       <% @questions.each do |question| %>

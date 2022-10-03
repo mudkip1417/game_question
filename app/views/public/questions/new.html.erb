@@ -26,7 +26,16 @@
 
           <label for="item_introduction">質問内容</label>
 
-          <%= f.text_area :question, class:'form-control item_intorduction' %>
+          <%= f.text_area :question, class:'form-control' %>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="item_introduction">タグ</label>
+
+          <%= f.text_field :tag_name, class:'form-control' %><br>
+          <small>,で区切ることで複数選択できます。</small><br>
 
         </div>
 

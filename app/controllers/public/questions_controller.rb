@@ -2,6 +2,7 @@ class Public::QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @tag_list = Tag.all
   end
 
   def new
@@ -11,9 +12,14 @@ class Public::QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user_id = current_user.id
-    @question.save
-    # binding.pry
-    redirect_to public_questions_path
+    tag_list = params[:question][:tag_name].split(',')
+    if @question.save
+      @question.save_tag(tag_list)
+      # binding.pry
+      redirect_to public_questions_path
+    else
+      render:new
+    end
   end
 
   def show
@@ -33,6 +39,11 @@ class Public::QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
     redirect_to public_questions_path
+  end
+
+  def search_tag
+    @tag_list = tag.all
+    @tag = Tag.find(params[:tag_id])
   end
 
   private
