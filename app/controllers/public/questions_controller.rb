@@ -42,14 +42,15 @@ class Public::QuestionsController < ApplicationController
   end
 
   def search_tag
-    @tag_list = tag.all
+    @questions = Question.all
+    @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:title,:question,:game_id,:image)
+    params.require(:question).permit(:title,:question,:game_id,:image,:tag_id)
   end
 
 end

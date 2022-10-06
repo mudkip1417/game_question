@@ -2,21 +2,12 @@
 
   <div class="container">
 
-    <% @tag_list.each do |list|%>
-    <%=list.tag_name %>
-    <% "(#{list.questions.count})" %>
-    <% end %>
+    <h5>タグが<%=@tag.tag_name%>の投稿一覧</h5>
 
-    <% @questions.each do |question| %>
-    <i class="fas fa-tag"><%= question.tags.map(&:tag_name).join(', ') %></i>
-    <% end %>
-
-    <% @tag_list.each do |list| %>
-      <%= link_to list.tag_name,public_search_tag_path(tag_id: list.id) %>
-      <%= "(#{list.questions.count})" %>
-    <% end %>
-
-    <div><br></div>
+<!--タグリスト-->
+<% @tag_list.each do |list|%>
+<%=link_to list.tag_name,public_search_tag_path(tag_id: list.id) %>
+<%="(#{list.questions.count})" %><% end %>
 
     <div class="row">
 
@@ -51,5 +42,9 @@
     </div>
 
   </div>
+
+<!--<div class="pagination pagination-sm justify-content-center">-->
+       <%#= paginate @posts %>
+    <!--</div>-->
 
 </div>
