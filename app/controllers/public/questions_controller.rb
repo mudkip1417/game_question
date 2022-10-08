@@ -42,7 +42,7 @@ class Public::QuestionsController < ApplicationController
   end
 
   def search_tag
-    @tag_list = tag.all
+    @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
     @questions = @tag.questions
   end
