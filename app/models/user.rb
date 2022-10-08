@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :questions, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   # 検索方法分岐
   def self.looks(search, word)

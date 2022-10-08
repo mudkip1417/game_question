@@ -20,6 +20,12 @@
 
     <div class="row">
 
+      <div class="d-flex align-items-center justify-content-center">
+        <%= link_to new_public_question_path do %>
+          <button type="button" class="btn-outline-dark btn-circle btn-lg">＋</button>
+        <% end %>
+      </div>
+
       <% @questions.each do |question| %>
 
         <div class="col-md-4">
@@ -39,6 +45,22 @@
                 <small class="text-muted">質問:<%= question.question %></small>
 
               </div>
+
+              <small class="text-muted"><%= link_to "詳細", public_question_path(question.id) %></small><br>
+
+              <small class="text-muted">
+
+                <% if question.bookmarked_by?(current_user) %>
+
+                  <td><%= link_to "ブックマークを外す", public_question_bookmarks_path(question.id), method: :delete %></td>
+
+                <% else %>
+
+                  <td><%= link_to "ブックマーク", public_question_bookmarks_path(question.id), method: :post %></td>
+
+                <% end %>
+
+              </small>
 
             </div>
 

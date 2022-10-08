@@ -49,10 +49,9 @@ Rails.application.routes.draw do
     resources :comments
   end
   namespace :public do
-    # get 'bookmarks/index'
-    # get 'bookmarks/show'
-    # get 'bookmarks/edit'
-    resources :bookmarks
+    resources :questions, except: [:index] do
+      resource :bookmarks, only: [:create, :destroy]
+    end
   end
   namespace :public do
     # get 'games/index'
@@ -64,6 +63,7 @@ Rails.application.routes.draw do
     # get 'questions/index'
     # get 'questions/show'
     resources :questions
+    get 'bookmarks' => 'questions#bookmark'
   end
 
   namespace :public do

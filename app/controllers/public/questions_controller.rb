@@ -5,6 +5,10 @@ class Public::QuestionsController < ApplicationController
     @tag_list = Tag.all
   end
 
+  def bookmark
+
+  end
+
   def new
     @question = Question.new
   end

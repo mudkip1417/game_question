@@ -3,6 +3,12 @@ class Question < ApplicationRecord
   belongs_to :user, dependent: :destroy
   has_many :tagmaps, dependent: :destroy
   has_many :tags, through: :tagmaps
+  has_many :bookmarks, dependent: :destroy
+
+  # ブックマーク機能
+  def bookmarked_by?(user)
+    bookmarks.where(user_id: user).exists?
+  end
 
   # 検索方法分岐
   def self.looks(search, word)
