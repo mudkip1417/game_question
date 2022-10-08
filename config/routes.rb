@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # 管理者
   devise_for :admins, skip: [:registrations, :passwords], controllers: {
-    sessions: "admin/session"
+    sessions: "admin/sessions"
   }
 
   namespace :admin do

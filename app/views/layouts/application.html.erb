@@ -12,10 +12,129 @@
 
   <body>
 
-    <br>
-    <br>
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+        <div class="container">
+
+          <% if user_signed_in? %>
+            <strong><%= link_to "GameQuestion", public_questions_path, class:"navbar-brand" %></strong>
+          <% else %>
+            <strong><%= link_to "GameQuestion", root_path, class:"navbar-brand" %></strong>
+          <% end %>
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
+
+            <ul class="navbar-nav ml-auto">
+
+              <% if user_signed_in? %>
+
+                <li class="customer-name">
+                 <strong>ようこそ、<%= current_user.first_name %>さん！</strong>
+                </li>
+
+
+                <li>
+                  <%= link_to public_users_path(current_user.id), class:'nav-link text-light' do  %>
+                    マイページ
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to public_questions_path, class:'nav-link text-light' do  %>
+                    質問一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to public_bookmarks_path, class:'nav-link text-light' do  %>
+                    ブックマーク一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to public_groups_path, class:'nav-link text-light' do  %>
+                    グループ一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to destroy_user_session_path, class:'nav-link text-light', method: :delete do  %>
+                    ログアウト
+                  <% end %>
+                </li>
+
+              <% elsif admin_signed_in? %>
+
+                <li>
+                  <%= link_to admin_users_path, class:'nav-link text-light' do  %>
+                    ユーザー一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to admin_groups_path, class:'nav-link text-light' do  %>
+                    グループ一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to admin_games_path, class:'nav-link text-light' do  %>
+                    ジャンル一覧
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to destroy_admin_session_path, class:'nav-link text-light',method: :delete  do  %>
+                    ログアウト
+                  <% end %>
+                </li>
+
+              <% else %>
+
+                <li>
+                  <%= link_to new_user_registration_path, class:'nav-link text-light' do  %>
+                    会員登録
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to new_user_session_path, class:'nav-link text-light' do  %>
+                    会員ログイン
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to public_questions_path, class:'nav-link text-light' do  %>
+                    商品一覧
+                  <% end %>
+                </li>
+
+              <% end %>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </header>
+
+
 
     <% if user_signed_in? %>
+      <br>
+      <br>
       <div class="search_form">
         <%= form_with url: public_search_path, local: true, method: :get do |f| %>
           <%= f.text_field :word %>
@@ -24,9 +143,10 @@
           <%= f.submit "検索", class: "btn btn-primary" %>
         <% end %>
       </div>
+      <br>
+      <br>
     <% end %>
-    <br>
-    <br>
+
     <%= yield %>
   </body>
 </html>
