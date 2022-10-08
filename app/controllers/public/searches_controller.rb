@@ -1,17 +1,37 @@
-class SearchesController < ApplicationController
+class Public::SearchesController < ApplicationController
 
   # def search
-  #   @range = params[:range]
+  #   @model = params["model"]
+  #   @content = params["content"]
+  #   @method = params["method"]
+  #   @records = search_for(@model, @content, @method)
+  # end
 
-  #   if @range == "User"
-  #     @users = User.looks(params[:search], params[:word])
-  #   else
-  #     @questions = Question.looks(params[:search], params[:word])
+  # private
+  # def search_for(model, content, method)
+  #   if model == 'User'
+  #     if method == 'perfect'
+  #       User.where(name: content)
+  #     else
+  #       User.where('name LIKE ?', '%'+content+'%')
+  #     end
+  #   elsif model == 'Question'
+  #     if method == 'perfect'
+  #       Post.where(title: content)
+  #     else
+  #       Post.where('title LIKE ?', '%'+content+'%')
+  #     end
   #   end
   # end
 
-  # def search_result
-  #   @questions = Question.all
-  # end
+  def search
+    @range = params[:range]
+
+    if @range == "User"
+      @users = User.looks(params[:search], params[:word])
+    else
+      @questions = Question.looks(params[:search], params[:word])
+    end
+  end
 
 end
