@@ -23,3 +23,38 @@
   </tr>
 
 </tbody>
+<br>
+<br>
+
+
+<h3>コメント</h3>
+<br>
+
+<%= form_with model: [@question,@comment], url: public_question_comments_path(@question), method: :post do |f| %>
+
+  <%= f.text_area :comment, placeholder: "コメントをここに" %>
+  <%= f.submit "送信" %>
+
+<% end %>
+<br>
+
+<h3>コメント一覧</h3>
+
+<table>
+
+  <tbody>
+
+    <% @question.comments.each do |comment| %>
+    <tr>
+      <td><%= comment.user.last_name %></td>
+      <td><%= comment.comment %></td>
+      <td>
+        <% if comment.user == current_user %>
+        <%= link_to "削除", public_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

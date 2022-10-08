@@ -5,10 +5,6 @@ class Public::QuestionsController < ApplicationController
     @tag_list = Tag.all
   end
 
-  def bookmark
-
-  end
-
   def new
     @question = Question.new
   end
@@ -28,6 +24,9 @@ class Public::QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @comment = Comment.new
+    @comment = Comment.all
+    @comments = @question.comments
   end
 
   def edit

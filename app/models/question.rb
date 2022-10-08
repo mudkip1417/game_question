@@ -4,6 +4,7 @@ class Question < ApplicationRecord
   has_many :tagmaps, dependent: :destroy
   has_many :tags, through: :tagmaps
   has_many :bookmarks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # ブックマーク機能
   def bookmarked_by?(user)

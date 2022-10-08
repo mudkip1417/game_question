@@ -42,12 +42,12 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  namespace :public do
-    # get 'comments/index'
-    # get 'comments/show'
-    # get 'comments/edit'
-    resources :comments
-  end
+  # namespace :public do
+  #   # get 'comments/index'
+  #   # get 'comments/show'
+  #   # get 'comments/edit'
+  #   resources :comments
+  # end
   namespace :public do
     resources :questions, except: [:index] do
       resource :bookmarks, only: [:create, :destroy]
@@ -62,7 +62,9 @@ Rails.application.routes.draw do
   namespace :public do
     # get 'questions/index'
     # get 'questions/show'
-    resources :questions
+    resources :questions do
+      resources :comments, only: [:create,:destroy]
+    end
     get 'bookmarks' => 'questions#bookmark'
   end
 
