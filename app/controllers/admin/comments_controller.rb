@@ -1,10 +1,24 @@
 class Admin::CommentsController < ApplicationController
-  def index
+
+  def create
+    @question = Question.find(params[:question_id])
+    @comment = current_user.comments.new(comment_params)
+    @comment.question_id = @question.id
+    if@comment.save
+      redirect_to public_question_path(@question.id)
+    end
   end
 
-  def show
+  def destroy
+    Comment.find(params[:id]).destroy
+    @question = Question.find(params[:question_id])
+    redirect_to admin_question_path(@question.id)
   end
 
-  def edit
+  private
+
+  def comment_params
+    params.require(:comment).permit(:comment)
   end
+
 end

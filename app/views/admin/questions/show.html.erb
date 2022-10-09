@@ -1,2 +1,50 @@
-<h1>Admin::Questions#show</h1>
-<p>Find me in app/views/admin/questions/show.html.erb</p>
+<tbody>
+
+  <tr>
+
+    <td><%= @question.user.last_name %></td>
+
+    <td><%= @question.title %></td>
+
+    <td><%= @question.question %></td>
+
+    <td><%= link_to "編集", public_questions_path %></td>
+
+    <% if @question.bookmarked_by?(current_user) %>
+
+      <td><%= link_to "ブックマークを外す", public_question_bookmarks_path(@question), method: :delete %></td>
+
+    <% else %>
+
+      <td><%= link_to "ブックマーク", public_question_bookmarks_path(@question), method: :post %></td>
+
+    <% end %>
+
+  </tr>
+
+</tbody>
+<br>
+<br>
+
+<h3>コメント一覧</h3>
+
+<table>
+
+  <tbody>
+
+    <% @question.comments.each do |comment| %>
+    <tr>
+      <td><%= comment.user.last_name %></td>
+      <td><%= comment.comment %></td>
+      <td>
+        <% if user_signed_in? && comment.user == current_user %>
+          <%= link_to "削除", public_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
+        <% elsif admin_signed_in? %>
+          <%= link_to "管理者削除", admin_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

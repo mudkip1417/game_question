@@ -49,8 +49,10 @@
       <td><%= comment.user.last_name %></td>
       <td><%= comment.comment %></td>
       <td>
-        <% if comment.user == current_user %>
-        <%= link_to "削除", public_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
+        <% if user_signed_in? && comment.user == current_user %>
+          <%= link_to "削除", public_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
+        <% elsif admin_signed_in? %>
+          <%= link_to "管理者削除", admin_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>
         <% end %>
       </td>
     </tr>

@@ -1,5 +1,6 @@
 <h1>Homes#top</h1>
 <p>Find me in app/views/homes/top.html.erb</p>
 
-<%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %><br>
+<%= link_to 'ゲストログイン新規（閲覧用）', public_guest_sign_in_path, method: :post %><br>
+<%= link_to 'ゲストログイン（閲覧用）', user_session_path, method: :post %><br>
 <%= link_to "管理者サインイン", new_admin_session_path %>

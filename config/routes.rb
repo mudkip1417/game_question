@@ -23,10 +23,9 @@ Rails.application.routes.draw do
     resources :games
   end
   namespace :admin do
-    # get 'questions/index'
-    # get 'questions/show'
-    # get 'questions/edit'
-    resources :questions
+    resources :questions do
+      resources :comments, only: [:create,:destroy]
+    end
   end
 
   namespace :admin do
@@ -60,8 +59,6 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-    # get 'questions/index'
-    # get 'questions/show'
     resources :questions do
       resources :comments, only: [:create,:destroy]
     end
