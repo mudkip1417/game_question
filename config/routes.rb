@@ -70,10 +70,7 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-    # get 'groups/index'
-    # get 'groups/show'
-    # get 'groups/edit'
-    resources :groups
+    resources :groups, except: [:destroy]
   end
 
   namespace :public do
