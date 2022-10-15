@@ -50,12 +50,12 @@
 
           <td><%= group.introduction %></td>
 
-          <td>
+          <td><%= group.users.count %></td>
 
+          <td>
             <% if group.owner_id == current_user.id %>
               <%= link_to 'Edit', edit_public_group_path(group), class: "btn btn-sm btn-success" %>
             <% end %>
-
           </td>
 
         </tr>
