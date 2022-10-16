@@ -1,10 +1,77 @@
-<% if user_signed_in? %>
-  <div class="search_form">
-    <%= form_with url: public_search_path, local: true, method: :get do |f| %>
-      <%= f.text_field :word %>
-      <%= f.select :range, options_for_select([['User'], ['Question']]) %>
-      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-      <%= f.submit "検索", class: "btn btn-primary" %>
+<div class="album py-5">
+
+  <div class="container">
+
+    <% @tag_list.each do |list|%>
+    <%=list.tag_name %>
+    <% "(#{list.questions.count})" %>
     <% end %>
+
+    <% @questions.each do |question| %>
+    <i class="fas fa-tag"><%= question.tags.map(&:tag_name).join(', ') %></i>
+    <% end %>
+
+    <% @tag_list.each do |list| %>
+      <%= link_to list.tag_name,public_search_tag_path(tag_id: list.id) %>
+      <%= "(#{list.questions.count})" %>
+    <% end %>
+
+    <div><br></div>
+
+    <div class="row">
+
+      <div class="d-flex align-items-center justify-content-center">
+        <%= link_to new_public_question_path do %>
+          <button type="button" class="btn-outline-dark btn-circle btn-lg">＋</button>
+        <% end %>
+      </div>
+
+      <% @questions.each do |question| %>
+
+        <div class="col-md-4">
+
+          <div class="card mb-4 shadow-sm">
+
+            <%#= link_to public_item_path(item.id) do %>
+              <%= image_tag question.get_image, size: "250x265", class:'bd-placeholder-img card-img-top' %>
+            <%# end %>
+
+            <div class="card-body">
+
+              <p class="card-title">ゲームタイトル:<%= question.title %></p>
+
+              <div class="d-flex justify-content-between align-items-center">
+
+                <small class="text-muted">質問:<%= question.question %></small>
+
+              </div>
+
+              <small class="text-muted"><%= link_to "詳細", public_question_path(question.id) %></small><br>
+
+              <small class="text-muted">
+
+                <% if question.bookmarked_by?(current_user) %>
+
+                  <td><%= link_to "ブックマークを外す", public_question_bookmarks_path(question.id), method: :delete %></td>
+
+                <% else %>
+
+                  <td><%= link_to "ブックマーク", public_question_bookmarks_path(question.id), method: :post %></td>
+
+                <% end %>
+
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
   </div>
-<% end %>
+
+</div>

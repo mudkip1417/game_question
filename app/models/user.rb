@@ -9,6 +9,14 @@ class User < ApplicationRecord
   has_many :comments
   has_many :group_users
 
+  def get_image
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/sample-author1.jpg')
+      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    image
+  end
+
   # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"

@@ -1,26 +1,11 @@
 <div><%=link_to "グループを作成する",new_public_group_path %> | <%=link_to "グループ一覧",public_groups_path %></div>
 
-<div class='container'>
-
-  <div class='row'>
-
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
-      <h3>Create Group</h3>
-
-        <%= render 'form', group: @group %>
-
-    </div>
-
-  </div>
-
-</div>
-
+<br>
 <div class='col-md-8 offset-md-1'>
 
   <h2>Groups</h2>
 
-  <table class='table table-hover table-inverse'>
+  <table class='table table-hover table-inverse text-light'>
 
     <thead>
 

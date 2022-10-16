@@ -1,5 +1,9 @@
 class Public::UsersController < ApplicationController
   def index
+    @user = User.find(current_user.id)
+    @question = Question.all
+    @questions = @user.questions
+    @tag_list = Tag.all
   end
 
   def show
@@ -10,4 +14,5 @@ class Public::UsersController < ApplicationController
 
   def unsubscribe
   end
+
 end
