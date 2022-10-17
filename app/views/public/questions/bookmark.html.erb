@@ -1,0 +1,23 @@
+<table>
+  <h2>ブックマーク一覧</h2>
+  <thead>
+    <tr>
+      <th>投稿者名</th>
+      <th>タイトル</th>
+      <th>本文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.question.user.last_name %></td>
+        <td>
+          <%= link_to public_question_path(bookmark.question) do %>
+            <%= bookmark.question.title %>
+          <% end %>
+        </td>
+        <td><%= bookmark.question.question %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

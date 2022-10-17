@@ -50,6 +50,10 @@ class Public::QuestionsController < ApplicationController
     @questions = @tag.questions
   end
 
+  def bookmark
+    @bookmarks = Bookmark.where(user_id: current_user.id)
+  end
+
   private
 
   def question_params
