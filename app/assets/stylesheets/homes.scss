@@ -13,8 +13,35 @@
   overflow: hidden;
 }
 
+body .page-content {
+  margin-top: 70px;
+  background-color: #27292a;
+  padding: 60px;
+  border-radius: 23px;
+}
+
+.main-banner h4 {
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+// .row {
+//   --bs-gutter-x: 1.5rem;
+//   --bs-gutter-y: 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-top: calc(-1 * var(--bs-gutter-y));
+//   margin-right: calc(-.5 * var(--bs-gutter-x));
+//   margin-left: calc(-.5 * var(--bs-gutter-x));
+// }
+
+.container{
+  max-width: 1320px;
+}
+
 .main-banner {
-  background-image: url(app/assets/images/banner-bg.jpg);
+  background-image: url(./forest.jpg);
   background-position: center center;
   background-size: cover;
   min-height: 380px;
@@ -27,20 +54,20 @@
   color: #ec6090;
 }
 
-.main-button a {
-  font-size: 14px;
-  color: #fff;
-  background-color: #e75e8d;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 25px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-}
+// .main-button {
+//   font-size: 14px;
+//   color: #fff;
+//   background-color: #e75e8d;
+//   padding: 12px 30px;
+//   display: inline-block;
+//   border-radius: 25px;
+//   font-weight: 400;
+//   text-transform: capitalize;
+//   letter-spacing: 0.5px;
+//   transition: all .3s;
+//   position: relative;
+//   overflow: hidden;
+// }
 
 
 
