@@ -12,10 +12,10 @@ body, nav{
   max-width: 1320px;
 }
 
-li.nav-item{
-  color: #dcdcdc;
+.nav-tabs .nav-link.activ{
+  background-color: #ec6090;
 }
 
-.nav-item:hover{
+.nav-tabs .nav-link{
   color: #ec6090;
 }

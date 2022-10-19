@@ -20,5 +20,7 @@ Rails.application.config.assets.precompile += %w(
   admin/*
   public/*
 
+  users.scss
+
 
 )
