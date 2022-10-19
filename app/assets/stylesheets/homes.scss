@@ -1,4 +1,4 @@
-.main-button a {
+.main-button a{
   font-size: 14px;
   color: #fff;
   background-color: #e75e8d;
@@ -13,8 +13,38 @@
   overflow: hidden;
 }
 
+.main-button-2 a{
+  font-size: 14px;
+  color: #fff;
+  background-color: #00cc00;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-button-3 a{
+  font-size: 14px;
+  color: #fff;
+  background-color: #0066ff;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
 body .page-content {
-  margin-top: 70px;
+  margin-top: 40px;
   background-color: #27292a;
   padding: 60px;
   border-radius: 23px;
@@ -26,22 +56,12 @@ body .page-content {
   margin-bottom: 25px;
 }
 
-// .row {
-//   --bs-gutter-x: 1.5rem;
-//   --bs-gutter-y: 0;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-top: calc(-1 * var(--bs-gutter-y));
-//   margin-right: calc(-.5 * var(--bs-gutter-x));
-//   margin-left: calc(-.5 * var(--bs-gutter-x));
-// }
-
 .container{
   max-width: 1320px;
 }
 
 .main-banner {
-  background-image: url(./forest.jpg);
+  background-image: url(./top-game.jpg);
   background-position: center center;
   background-size: cover;
   min-height: 380px;
@@ -53,26 +73,6 @@ body .page-content {
   font-style: normal;
   color: #ec6090;
 }
-
-// .main-button {
-//   font-size: 14px;
-//   color: #fff;
-//   background-color: #e75e8d;
-//   padding: 12px 30px;
-//   display: inline-block;
-//   border-radius: 25px;
-//   font-weight: 400;
-//   text-transform: capitalize;
-//   letter-spacing: 0.5px;
-//   transition: all .3s;
-//   position: relative;
-//   overflow: hidden;
-// }
-
-
-
-
-
 
 
 // Place all the styles related to the homes controller here.
