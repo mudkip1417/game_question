@@ -48,7 +48,7 @@
 
           <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="nav nav-tabs ml-auto">
 
               <% if user_signed_in? %>
 
@@ -57,31 +57,31 @@
                 <!--</li>-->
 
 
-                <li>
-                  <%= link_to public_users_path(current_user.id), class:'nav-link text-light' do  %>
+                <li class="nav-item">
+                  <%= link_to public_users_path(current_user.id), class:'nav-link link-danger text-light' do  %>
                     マイページ
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to public_questions_path, class:'nav-link text-light' do  %>
                     質問一覧
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to public_bookmarks_path, class:'nav-link text-light' do  %>
                     ブックマーク一覧
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to public_groups_path, class:'nav-link text-light' do  %>
                     グループ一覧
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to destroy_user_session_path, class:'nav-link text-light', method: :delete do  %>
                     ログアウト
                   <% end %>
@@ -89,25 +89,25 @@
 
               <% elsif admin_signed_in? %>
 
-                <li>
+                <li class="nav-item">
                   <%#= link_to admin_users_path, class:'nav-link text-light' do  %>
                     ユーザー一覧
                   <%# end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to admin_groups_path, class:'nav-link text-light' do  %>
                     グループ一覧
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to admin_games_path, class:'nav-link text-light' do  %>
                     ジャンル一覧
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to destroy_admin_session_path, class:'nav-link text-light',method: :delete  do  %>
                     ログアウト
                   <% end %>
@@ -115,19 +115,19 @@
 
               <% else %>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to new_user_registration_path, class:'nav-link text-light' do  %>
                     会員登録
                   <% end %>
                 </li>
 
-                <li>
-                  <%= link_to new_user_session_path, class:'nav-link text-light' do  %>
+                <li class="nav-item">
+                  <%= link_to new_user_session_path, class:'nav-link text-light' do %>
                     会員ログイン
                   <% end %>
                 </li>
 
-                <li>
+                <li class="nav-item">
                   <%= link_to public_questions_path, class:'nav-link text-light' do  %>
                     商品一覧
                   <% end %>
