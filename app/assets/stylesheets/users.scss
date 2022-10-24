@@ -18,7 +18,7 @@ body {
   padding-bottom: 40px;
 }
 
-.new_user {
+.new_user{
   width: 100%;
   max-width: 330px;
   padding: 15px;
@@ -27,13 +27,16 @@ body {
 .new_user .checkbox {
   font-weight: 400;
 }
-.new_user .field {
+
+.new_user .form-controll{
   position: relative;
   box-sizing: border-box;
   height: auto;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
 }
+
 .new_user .field:focus {
   z-index: 2;
 }
@@ -46,4 +49,16 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }

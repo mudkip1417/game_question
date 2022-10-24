@@ -5,20 +5,16 @@
 
   <div class="m-5 text-center">
 
-    <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
+    <h1 class="mb-3 font-weight-normal">Log in</h1>
 
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <%= f.label :email, class: "sr-only" %><br />
+        <%= f.email_field :email, autofocus: true, placeholder: "email", autocomplete: "email", class: "form-controll" %>
 
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
+        <%= f.label :password, class: "sr-only" %><br />
+        <%= f.password_field :password, placeholder: "password", autocomplete: "current-password", class: "form-controll" %>
 
       <% if devise_mapping.rememberable? %>
         <div class="checkbox">
