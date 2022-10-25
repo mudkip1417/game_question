@@ -7,6 +7,8 @@ class Public::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
+    @user = User.all
   end
 
   def edit

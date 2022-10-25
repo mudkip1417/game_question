@@ -62,3 +62,52 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+// マイページ
+
+.container{
+  max-width: 1320px;
+}
+
+body .page-content {
+  margin-top: 5px;
+  background-color: #27292a;
+  padding: 30px;
+  border-radius: 23px;
+}
+
+.main-profile {
+  border-radius: 23px;
+  padding: 30px;
+  background-color: #1f2122;
+}
+
+.user_image {
+  width: 100%;
+  height: 300;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.main-profile ul {
+  border-radius: 23px;
+  padding: 30px;
+  background-color: #27292a;
+}
+
+.main-profile ul li {
+  width: 100%;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #666;
+  list-style: none;
+}
+
+.main-profile ul li span {
+  float: right;
+  font-weight: 500;
+  color: #ec6090;
+}

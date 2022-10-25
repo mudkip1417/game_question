@@ -20,11 +20,11 @@
 
           <% if user_signed_in? %>
             <%= link_to public_questions_path, class:"navbar-brand text-light" do %>
-              <%= image_tag 'logo.png' %>
+              <%= image_tag 'Game.png', size: "90x90" %>
             <% end %>
           <% else %>
             <%= link_to root_path, class:"navbar-brand text-light" do %>
-              <%= image_tag 'logo.png' %>
+              <%= image_tag 'Game.png', size: "90x90" %>
             <% end %>
           <% end %>
 
@@ -58,7 +58,7 @@
 
 
                 <li class="nav-item">
-                  <%= link_to public_users_path(current_user.id), class:'nav-link link-danger text-light' do  %>
+                  <%= link_to public_user_path(current_user.id), class:'nav-link link-danger text-light' do  %>
                     マイページ
                   <% end %>
                 </li>
