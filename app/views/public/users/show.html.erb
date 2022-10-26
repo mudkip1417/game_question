@@ -26,10 +26,24 @@
 
                   <ul>
                     <li>Name <span><%= current_user.last_name %> <%= current_user.first_name %></span></li>
-                    <li>Friends Online <span>16</span></li>
-                    <li>Live Streams <span>None</span></li>
-                    <li>Clips <span>29</span></li>
+                    <li>Telephone number <span><%= current_user.telephone_number %></span></li>
+                    <li>Email <span><%= current_user.email %></span></li>
+                    <p class="edit-link">
+                      <%= link_to edit_public_user_path, class: "btn btn-outline-danger" do %>
+                       Edit User
+                      <% end %>
+                    </p>
                   </ul>
+
+                </div>
+
+                <div class="col-lg-4 align-self-center">
+
+                  <div class="up-question">
+
+
+
+                  </div>
 
                 </div>
 

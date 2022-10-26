@@ -111,3 +111,27 @@ body .page-content {
   font-weight: 500;
   color: #ec6090;
 }
+
+.edit-link {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.edit-link a {
+  font-size: 14px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+}
+
