@@ -13,12 +13,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :comments
   end
+
   namespace :admin do
-    # get 'games/index'
-    # get 'games/show'
-    # get 'games/edit'
     resources :games
   end
+
   namespace :admin do
     resources :questions do
       resources :comments, only: [:create,:destroy]
