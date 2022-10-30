@@ -122,10 +122,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_132807) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
+    t.string "user_name", null: false
     t.string "telephone_number", null: false
     t.text "introduction"
     t.string "email", default: "", null: false
