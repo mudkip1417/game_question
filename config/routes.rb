@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    # get 'comments/index'
-    # get 'comments/show'
-    # get 'comments/edit'
     resources :comments
   end
   namespace :admin do
