@@ -84,7 +84,7 @@ body .page-content {
 
 .user_image {
   width: 100%;
-  height: 300;
+  height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
@@ -113,7 +113,7 @@ body .page-content {
 }
 
 .main-border-button {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 0px;
   text-align: center;
 }
@@ -144,4 +144,12 @@ p {
   color: #666;
   line-height: 30px;
   margin-bottom: 0px;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #ec6090;
+  border-bottom: 7px groove #ec6090 ;
+  padding-bottom: 15px;
 }

@@ -1,2 +1,82 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<%= stylesheet_link_tag 'users', :media => "all" %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <div class="row">
+
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+
+            <div class="m-2 text-center">
+
+              <h1 class="h2 mb-4 font-weight-normal">Change User Info</h1>
+
+               <%= form_with model: @user, url: public_user_path(@user.id), method: :patch do |f| %>
+
+                  <div class="form-group">
+
+                    <label for="user_name">ユーザーネーム</label>
+
+                    <%= f.text_field :user_name, class:'form-control user_name' %>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="user_iamge">Image</label>
+
+                    <%= f.file_field :get_image, class: 'form-control-file image' %>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="user_email">メールアドレス</label>
+
+                    <%= f.text_field :email, class:'form-control user_email' %>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="user_introduction">電話番号</label>
+
+                    <%= f.text_field :telephone_number, class:'form-control user_telephone_number' %>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="user_introduction">自己紹介</label>
+
+                    <%= f.text_area :introduction, class:'form-control user_introduction' %>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <%= f.submit '登録情報変更', class:'btn btn-danger' %>
+
+                  </div>
+
+                <% end %>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

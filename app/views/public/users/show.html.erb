@@ -18,15 +18,15 @@
 
                 <div class="col-lg-4">
 
-                  <%= image_tag "Game.png",style: "border-radius: 23px;", class: "user_image" %>
+                  <%= image_tag @user.get_image, style: "border-radius: 23px;", class: "user_image" %>
 
                 </div>
 
-                <div class="col-lg-4 align-self-center">
+                <div class="col-lg-4">
 
                   <div class="main-info header-text">
 
-                    <h4>Introduction</h4>
+                    <h2 class="text-center">Introduction</h4>
                      <p><%= @user.introduction %></p>
 
                   </div>
