@@ -17,55 +17,55 @@
 
               <h1 class="h2 mb-4 font-weight-normal">Change User Info</h1>
 
-               <%= form_with model: @user, url: public_user_path(@user.id), method: :patch do |f| %>
+              <%= form_with model: @user, url: public_user_path(@user.id), method: :patch do |f| %>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <label for="user_name">ユーザーネーム</label>
+                  <label for="user_name">ユーザーネーム</label>
 
-                    <%= f.text_field :user_name, class:'form-control user_name' %>
+                  <%= f.text_field :user_name, class:'form-control user_name' %>
 
-                  </div>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <label for="user_iamge">Image</label>
+                  <label for="user_iamge">Image</label>
 
-                    <%= f.file_field :get_image, class: 'form-control-file image' %>
+                  <%= f.file_field :profile_image, class: 'form-control-file image' %>
 
-                  </div>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <label for="user_email">メールアドレス</label>
+                  <label for="user_email">メールアドレス</label>
 
-                    <%= f.text_field :email, class:'form-control user_email' %>
+                  <%= f.text_field :email, class:'form-control user_email' %>
 
-                  </div>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <label for="user_introduction">電話番号</label>
+                  <label for="user_introduction">電話番号</label>
 
-                    <%= f.text_field :telephone_number, class:'form-control user_telephone_number' %>
+                  <%= f.text_field :telephone_number, class:'form-control user_telephone_number' %>
 
-                  </div>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <label for="user_introduction">自己紹介</label>
+                  <label for="user_introduction">自己紹介</label>
 
-                    <%= f.text_area :introduction, class:'form-control user_introduction' %>
+                  <%= f.text_area :introduction, class:'form-control user_introduction' %>
 
-                  </div>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <%= f.submit '登録情報変更', class:'btn btn-danger' %>
+                  <%= f.submit '登録情報変更', class:'btn btn-danger' %>
 
-                  </div>
+                </div>
 
-                <% end %>
+              <% end %>
 
             </div>
 
