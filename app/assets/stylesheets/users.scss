@@ -4,20 +4,21 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-html,
-body {
-  height: 100%;
-}
+// html,
+// body {
+//   height: 100%;
+// }
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+// body {
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   padding-top: 60px;
+//   padding-bottom: 40px;
+// }
 
+// ログイン画面
 .new_user{
   width: 100%;
   max-width: 330px;
@@ -28,12 +29,12 @@ body {
   font-weight: 400;
 }
 
-.new_user .form-controll{
+.user_email, .user_password {
   position: relative;
   box-sizing: border-box;
   height: auto;
   width: 100%;
-  padding: 10px;
+  padding: 30px;
   font-size: 16px;
 }
 
@@ -44,11 +45,15 @@ body {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  width: 300px;
+  height: 50px;
 }
 .new_user input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  width: 300px;
+  height: 50px;
 }
 
 .sr-only {
@@ -140,7 +145,7 @@ body .page-content {
   align-self: center!important;
 }
 
-p {
+.main-info p {
   font-size: 15px;
   color: #666;
   line-height: 30px;

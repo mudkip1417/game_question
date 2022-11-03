@@ -9,6 +9,8 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
+    @questions = @user.questions
+    @tag_list = Tag.all
   end
 
   def edit
