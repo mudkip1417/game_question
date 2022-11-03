@@ -14,6 +14,8 @@
 
             <div class="main-profile">
 
+              <h1 class="user-info"><strong><span>U</span>ser <span>I</span>nfo</strong></h1>
+
               <div class="row">
 
                 <div class="col-lg-4">
@@ -56,43 +58,49 @@
 
               </div>
 
+              <div class="py-3 border-bottom border-dark"></div>
+
               <div class="row">
 
                 <div class="col-lg-12">
 
                   <div class="album py-5">
 
-                    <% @tag_list.each do |list|%>
-                    <%=list.tag_name %>
-                    <% "(#{list.questions.count})" %>
-                    <% end %>
+                    <h1 class="tag-title"><strong><span>T</span>ags</strong></h1>
 
-                    <% @questions.each do |question| %>
-                    <i class="fas fa-tag"><%= question.tags.map(&:tag_name).join(', ') %></i>
-                    <% end %>
+                    <div class="tag-list">
 
-                    <% @tag_list.each do |list| %>
-                      <%= link_to list.tag_name,public_search_tag_path(tag_id: list.id) %>
-                      <%= "(#{list.questions.count})" %>
-                    <% end %>
+                      <% @tag_list.each do |list| %>
+                        <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-danger" do %>
+                          <span>
+                            <i class="fas fa-tag"></i> <%= list.tag_name %><%= "(#{list.questions.count})" %>
+                          </span>
+                        <% end %>
+                      <% end %>
+
+                    </div>
 
                     <div><br></div>
 
-                    <div class="row">
+                    <h1 class="my-questions-title"><strong><span>M</span>y <span>Q</span>uestions</strong></h1>
 
-                      <% @questions.each do |question| %>
 
-                      <div class="col-lg-2 text-center">
 
-                        <%= image_tag @user.get_profile_image, style: "border-radius: 100px;", class: "user_image_question" %>
+                    <% @questions.each do |question| %>
 
-                      </div>
+                      <div class="row">
 
-                        <div class="col-lg-10">
+                        <div class="col-lg-2 my-questions">
+
+                          <%= image_tag @user.get_profile_image, style: "border-radius: 100px;", class: "user_image_question" %>
+
+                        </div>
+
+                        <div class="col-lg-10 my-questions">
 
                           <p>
                             <span class="question-user-name" ><strong><%= @user.user_name %></strong></span>
-                            <span class="up-time text-muted">時間</span>
+                            <span class="up-time text-muted"><%= question.created_at.strftime("%Y年 %m月 %d日") %></span>
                           </p>
 
                           <div class="question-body">
@@ -101,7 +109,7 @@
 
                             <div class="d-flex justify-content-between align-items-center">
 
-                              <small class="text-muted">質問:<%= question.question %></small>
+                              <small class="text-muted"><%= question.question %></small>
 
                             </div>
 
@@ -129,9 +137,11 @@
 
                         </div>
 
-                      <% end %>
+                      </div>
 
-                    </div>
+                      <div class="border-bottom border-dark"></div>
+
+                    <% end %>
 
                   </div>
 
