@@ -1,6 +1,7 @@
 class Public::QuestionsController < ApplicationController
 
   def index
+    @users = User.all
     @questions = Question.all
     @tag_list = Tag.all
   end
@@ -16,7 +17,7 @@ class Public::QuestionsController < ApplicationController
     if @question.save
       @question.save_tag(tag_list)
       # binding.pry
-      redirect_to public_questions_path
+      redirect_to public_user_path(current_user.id)
     else
       render:new
     end
@@ -48,6 +49,7 @@ class Public::QuestionsController < ApplicationController
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
     @questions = @tag.questions
+    @users = User.all
   end
 
   def bookmark

@@ -20,7 +20,7 @@
 
                 <div class="col-lg-4">
 
-                  <%= image_tag @user.get_profile_image, style: "border-radius: 23px;", class: "user_image" %>
+                  <%= image_tag @user.get_profile_image, style: "border-radius: 23px;", class: "user-image" %>
 
                 </div>
 
@@ -90,27 +90,35 @@
 
                       <div class="row">
 
-                        <div class="col-lg-2 my-questions">
+                        <div class="col-lg-2 col-sm-2 col-xs-2 my-questions">
 
                           <%= image_tag @user.get_profile_image, style: "border-radius: 100px;", class: "user_image_question" %>
 
                         </div>
 
-                        <div class="col-lg-10 my-questions">
+                        <div class="col-lg-10 col-sm-10 col-xs-10 my-questions">
 
                           <p>
                             <span class="question-user-name" ><strong><%= @user.user_name %></strong></span>
-                            <span class="up-time text-muted"><%= question.created_at.strftime("%Y年 %m月 %d日") %></span>
+                            <span class="up-time text-muted"><%= question.created_at.strftime("%Y年 %m月 %d日 %H:%M") %></span>
                           </p>
 
                           <div class="question-body">
 
-                            <p class="text-muted">質問タイトル:<%= question.title %></p>
+                            <p class="question-title"><strong>質問タイトル: <%= question.title %></strong></p>
 
                             <div class="d-flex justify-content-between align-items-center">
 
-                              <small class="text-muted"><%= question.question %></small>
+                              <p><%= question.question %></p>
 
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3 col-xs-3">
+                              <% if question.image.attached? %>
+                                <% question.image.each do |image| %>
+                                  <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
+                                <% end %>
+                              <% end %>
                             </div>
 
                             <div class="text-right">
