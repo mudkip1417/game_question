@@ -29,15 +29,6 @@
   font-weight: 400;
 }
 
-.user_email, .user_password {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  width: 100%;
-  padding: 30px;
-  font-size: 16px;
-}
-
 .new_user .field:focus {
   z-index: 2;
 }
@@ -90,7 +81,6 @@ body .page-content {
 .user-image {
   aspect-ratio: 1/1;
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
@@ -149,15 +139,16 @@ body .page-content {
 }
 
 .main-profile ul {
+  width: 100%;
   border-radius: 23px;
-  padding: 30px;
+  padding: 20px;
   background-color: #27292a;
 }
 
 .main-profile ul li {
   width: 100%;
   font-size: 14px;
-  color: #666;
+  color: #ec6090;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #666;
@@ -167,11 +158,18 @@ body .page-content {
 .main-profile ul li span {
   float: right;
   font-weight: 500;
-  color: #ec6090;
+  color: #BBBBBB;
+  word-wrap: break-word;
+}
+
+.main-profile ul li p {
+  width: 100%;
+  color: #BBBBBB;
+  word-wrap: break-word;
 }
 
 .main-border-button {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 0px;
   text-align: center;
 }
@@ -205,7 +203,7 @@ body .page-content {
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 20px;
   color: #ec6090;
   border-bottom: 7px groove #ec6090 ;
@@ -240,4 +238,39 @@ h2 {
 
 .up-time{
   float: right;
+}
+
+#question_title, #question_image, #question_question, #question_tag_name {
+  background-color: black;
+  color: white;
+}
+
+#question {
+  height: 100%;
+}
+
+.up-button{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.up-button input{
+  font-size: 14px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 10px;
+  padding: 10px;
 }

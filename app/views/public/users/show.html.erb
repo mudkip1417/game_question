@@ -18,41 +18,68 @@
 
               <div class="row">
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-12 col-xs-12">
 
                   <%= image_tag @user.get_profile_image, style: "border-radius: 23px;", class: "user-image" %>
 
                 </div>
 
-                <div class="col-lg-4">
-
-                  <div class="main-info header-text">
-
-                    <h2 class="text-center">Introduction</h4>
-                     <p><%= @user.introduction %></p>
-
-                  </div>
-
-                  <div class="main-border-button">
-                    <%= link_to new_public_question_path, class: "btn btn-outline-danger" do %>
-                       Start Question !!
-                    <% end %>
-                  </div>
-
-                </div>
-
-                <div class="col-lg-4 align-self-center">
+                <div class="col-lg-4 col-sm-12 col-xs-12 mt-md-3 align-self-center">
 
                   <ul>
                     <li>Name <span><%= @user.user_name %></span></li>
                     <li>Favorite Game <span><%= @user.favorite_game %></span></li>
-                    <li>Email <span><%= @user.email %></span></li>
+                    <li>Introduction <p style="margin-top: 5px;"><%= @user.introduction %></p></li>
                     <p class="main-border-button">
                       <%= link_to edit_public_user_path, class: "btn btn-outline-danger" do %>
                        Edit User
                       <% end %>
                     </p>
                   </ul>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+
+                  <div class="main-info header-text">
+
+                    <h2 class="text-center">Let's Question!!</h4>
+
+                    <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
+
+                      <div class="title-form">
+
+                        <%= f.text_field :title, placeholder: "質問タイトル", class:'form-control' %>
+
+                      </div>
+
+                      <div class="image-form">
+
+                        <%= f.file_field :image, accept: "image/*", placeholder: "関連画像", class:'form-control' %>
+
+                      </div>
+
+                      <div class="tag-form">
+
+                          <%= f.text_field :tag_name, placeholder: "タグ ”,”で区切ると複数投稿できます", class:'form-control' %>
+
+                      </div>
+
+                      <div class="question-form">
+
+                        <%= f.text_area :question, placeholder: "質問内容", class:'form-control', size: '40x3' %>
+
+                      </div>
+
+                      <div class="up-button">
+
+                        <%= f.submit 'Up Question!!', class:'btn btn-outline-danger' %>
+
+                      </div>
+
+                    <% end %>
+
+                  </div>
 
                 </div>
 

@@ -11,6 +11,7 @@ class Public::UsersController < ApplicationController
     @users = User.all
     @questions = @user.questions
     @tag_list = Tag.all
+    @question = Question.new
   end
 
   def edit
@@ -33,7 +34,7 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :profile_image, :introduction, :email, :telephone_number, :favorite_game)
+    params.require(:user).permit(:user_name, :profile_image, :introduction, :email, :telephone_number, :favorite_game, :title, :question, :image)
   end
 
 end
