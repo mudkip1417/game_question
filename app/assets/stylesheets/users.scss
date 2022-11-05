@@ -150,12 +150,22 @@ h2 {
 
 #question_title, #question_question_images, #question_question, #question_tag_name {
   font-family: "arial";
-  background-color: black;
+  background-color: #1f2122;
   color: white;
 }
 
-#question {
-  height: 100%;
+#question_title {
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+}
+
+#question_question_images, #question_tag_name {
+  border-radius: 0;
+  border-bottom: none;
+}
+
+#question_question {
+  border-radius: 0 0 10px 10px;
 }
 
 .up-button{
