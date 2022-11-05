@@ -10,7 +10,7 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.question.user.last_name %></td>
+        <td><%= bookmark.question.user.user_name %></td>
         <td>
           <%= link_to public_question_path(bookmark.question) do %>
             <%= bookmark.question.title %>

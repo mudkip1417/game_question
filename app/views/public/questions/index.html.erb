@@ -85,11 +85,19 @@
 
                                 <% if question.bookmarked_by?(current_user) %>
 
-                                  <td><%= link_to "ブックマークを外す", public_question_bookmarks_path(question.id), method: :delete %></td>
+                                  <td>
+                                    <%= link_to public_question_bookmarks_path(question.id), method: :delete do %>
+                                      <i class="fa-solid fa-bookmark"  style="color: #ec6090; font-size: 30px;"></i>
+                                    <% end %>
+                                  </td>
 
                                 <% else %>
 
-                                  <td><%= link_to "ブックマーク", public_question_bookmarks_path(question.id), method: :post %></td>
+                                  <td>
+                                    <%= link_to public_question_bookmarks_path(question.id), method: :post do %>
+                                      <i class="fa-regular fa-bookmark" style="color: #ec6090; font-size: 30px;"></i>
+                                    <% end %>
+                                  </td>
 
                                 <% end %>
 
