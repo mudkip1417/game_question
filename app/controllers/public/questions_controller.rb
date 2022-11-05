@@ -59,7 +59,7 @@ class Public::QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title,:question,:game_id,:image)
+    params.require(:question).permit(:title,:question,:game_id,:image, question_images: [])
   end
 
 end

@@ -70,8 +70,8 @@
                             </div>
 
                             <div class="col-lg-3 col-sm-3 col-xs-3">
-                              <% if question.image.attached? %>
-                                <% question.image.each do |image| %>
+                              <% if question.question_images.attached? %>
+                                <% question.question_images.each do |image| %>
                                   <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
                                 <% end %>
                               <% end %>

@@ -72,6 +72,7 @@ body .page-content {
   border-radius: 23px;
 }
 
+// ユーザー情報と投稿フォーム
 .main-profile {
   border-radius: 23px;
   padding: 30px;
@@ -84,58 +85,6 @@ body .page-content {
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
-}
-
-.user-info, .my-questions-title, .tag-title{
-  padding-bottom: 25px;
-}
-
-.user-info span, .my-questions-title span, .tag-title span {
-  color: #ec6090;
-}
-
-.user-info strong, .my-questions-title strong, .tag-title strong {
-  border-bottom: 3px groove #ec6090 ;
-}
-
-.my-questions {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.question-body p {
-  width: 100%;
-  word-wrap: break-word;
-}
-
-.question-user-name{
-  color: #ec6090;
-  font-size: 25px;
-}
-
-.user_image_question {
-  aspect-ratio: 1/1;
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  overflow: hidden;
-}
-
-.question-image {
-  aspect-ratio: 1/1;
-  margin: 15px 5px 5px 5px;
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  overflow: hidden;
-}
-
-.question-title strong{
-  border-bottom: 1px groove #ec6090;
-}
-
-.show-link{
-  margin-right: 20px;
 }
 
 .main-profile ul {
@@ -191,25 +140,70 @@ body .page-content {
   text-decoration: none !important;
 }
 
-.align-self-center {
-  align-self: center!important;
-}
-
-.main-info p {
-  font-size: 15px;
-  color: #666;
-  line-height: 30px;
-  margin-bottom: 0px;
-}
-
 h2 {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 2px;
+  margin-bottom: 10px;
   color: #ec6090;
-  border-bottom: 7px groove #ec6090 ;
-  padding-bottom: 15px;
+  border-bottom: 5px groove #ec6090 ;
+  padding-bottom: 5px;
 }
 
+#question_title, #question_question_images, #question_question, #question_tag_name {
+  background-color: black;
+  color: white;
+}
+
+#question {
+  height: 100%;
+}
+
+.up-button{
+  margin-top: 3px;
+  text-align: center;
+}
+
+
+.up-button input{
+  font-size: 14px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+// 項目タイトル
+.my-questions-title {
+  padding-bottom: 60px;
+}
+
+.user-info, .tag-title{
+  padding-bottom: 30px;
+}
+
+.user-info span, .my-questions-title span, .tag-title span {
+  color: #ec6090;
+}
+
+.user-info strong, .my-questions-title strong, .tag-title strong {
+  padding: 0.1rem 0.7rem;
+  border-left: solid 20px #FF82B2 ;
+  border-bottom: solid 2px #FF82B2 ;
+}
+
+// タグ一覧
 .tag-list {
   margin: 25px;
   width: 100%;
@@ -236,41 +230,63 @@ h2 {
   padding: 10px;
 }
 
+
+// 自分の質問一覧
+.my-questions {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.question-body p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.question-user-name{
+  color: #ec6090;
+  font-size: 25px;
+}
+
+.user_image_question {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-images {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.question-image {
+  aspect-ratio: 1/1;
+  margin: 10px 5px 5px 5px;
+  width: 20%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-title strong{
+  border-bottom: 1px groove #ec6090;
+}
+
+.show-link{
+  margin-right: 20px;
+}
+
+
+.align-self-center {
+  align-self: center!important;
+}
+
 .up-time{
   float: right;
 }
 
-#question_title, #question_image, #question_question, #question_tag_name {
-  background-color: black;
-  color: white;
-}
-
-#question {
-  height: 100%;
-}
-
-.up-button{
-  margin-top: 20px;
-  text-align: center;
-}
-
-.up-button input{
-  font-size: 14px;
-  color: #ec6090;
-  background-color: transparent;
-  border: 1px solid #ec6090;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 25px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none !important;
-  // border: 1px solid #ec6090;
-  // border-radius: 100px;
-  margin: 10px;
-  padding: 10px;
+.content-border {
+  border-bottom: 2px solid gray;
 }
