@@ -62,13 +62,13 @@
 
                 <li class="nav-item">
                   <%= link_to public_user_path(current_user.id), class:'nav-link link-danger text-light' do  %>
-                    マイページ
+                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090;"></i> マイページ
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_questions_path, class:'nav-link text-light' do  %>
-                    質問一覧
+                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090;"></i> 質問一覧
                   <% end %>
                 </li>
 
@@ -148,6 +148,11 @@
 
     </header>
 
+    <div class="question-button">
+      <%= link_to new_public_question_path, class: "btn btn-outline-danger", style: "border-radius: 90px" do %>
+        <i class="fa-solid fa-question"></i><br>質問
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>

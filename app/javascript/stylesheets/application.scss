@@ -19,3 +19,24 @@ body, nav{
 .nav-tabs .nav-link{
   color: #ec6090;
 }
+
+.question-button {
+  position: fixed;
+  top: 20%;
+  left: 83%;
+  z-index: 10000;
+}
+
+.question-button a {
+  width: 110px;
+  height: 110px;
+  color: weight;
+  border-radius: 50%;
+  font-size: 30px;
+  border: 2px solid #666;
+}
+
+.question-button a i {
+  font-size: 50px;
+  color: #ec6090;
+}

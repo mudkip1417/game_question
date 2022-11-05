@@ -149,6 +149,7 @@ h2 {
 }
 
 #question_title, #question_question_images, #question_question, #question_tag_name {
+  font-family: "arial";
   background-color: black;
   color: white;
 }
@@ -272,6 +273,11 @@ h2 {
 
 .question-title strong{
   border-bottom: 1px groove #ec6090;
+  font-family: "arial";
+}
+
+.question-contents {
+  font-family: "arial";
 }
 
 .show-link{
@@ -288,5 +294,6 @@ h2 {
 }
 
 .content-border {
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #666;
 }
+

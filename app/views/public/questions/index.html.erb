@@ -20,7 +20,7 @@
 
                   <div class="album py-2">
 
-                    <h1 class="tag-title"><strong><span>T</span>ags</strong></h1>
+                    <h1 class="tag-title"><strong><i class="fa-solid fa-tags"></i> <span>T</span>ags</strong></h1>
 
                     <div class="tag-list">
 
@@ -36,7 +36,7 @@
 
                     <div><br></div>
 
-                    <h1 class="my-questions-title"><strong><span>E</span>veryone's <span>Q</span>uestions</strong></h1>
+                    <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>E</span>veryone's <span>Q</span>uestions</strong></h1>
 
 
 
@@ -69,7 +69,7 @@
 
                             </div>
 
-                            <div class="col-lg-3 col-sm-3 col-xs-3">
+                            <div class="ol-lg-12 col-sm-12 col-xs-12 question-images">
                               <% if question.question_images.attached? %>
                                 <% question.question_images.each do |image| %>
                                   <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
@@ -79,9 +79,9 @@
 
                             <div class="text-right">
 
-                              <small><%= link_to "詳細", public_question_path(question.id), class: "show-link" %></small>
+                              <span><%= link_to "詳細", public_question_path(question.id), class: "show-link" %></small>
 
-                              <small>
+                              <span>
 
                                 <% if question.bookmarked_by?(current_user) %>
 
@@ -93,7 +93,7 @@
 
                                 <% end %>
 
-                              </small>
+                              </span>
 
                             </div>
 

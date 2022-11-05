@@ -21,7 +21,7 @@ h1 span{
   font-size: 40px;
 }
 
-#question_title, #question_image, #question_question, #question_tag_name {
+#question_title, #question_question_images, #question_question, #question_tag_name {
   background-color: black;
   color: white;
 }
@@ -64,10 +64,16 @@ h1 span{
   overflow: hidden;
 }
 
+.question-images {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
 .question-image {
   aspect-ratio: 1/1;
-  margin: 15px 5px 5px 5px;
-  width: 100%;
+  margin: 10px 5px 5px 5px;
+  width: 20%;
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
@@ -145,6 +151,10 @@ h2 {
   padding-bottom: 15px;
 }
 
+.tag-name{
+  color: #ec6090;
+}
+
 .tag-list {
   margin: 25px;
   width: 100%;
@@ -173,4 +183,22 @@ h2 {
 
 .up-time{
   float: right;
+}
+
+.my-questions-title {
+  padding-bottom: 60px;
+}
+
+.user-info, .tag-title{
+  padding-bottom: 30px;
+}
+
+.user-info span, .my-questions-title span, .tag-title span {
+  color: #ec6090;
+}
+
+.user-info strong, .my-questions-title strong, .tag-title strong {
+  padding: 0.1rem 0.7rem;
+  border-left: solid 20px #FF82B2 ;
+  border-bottom: solid 2px #FF82B2 ;
 }

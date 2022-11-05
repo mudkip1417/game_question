@@ -43,7 +43,7 @@
 
                   <div class="main-info header-text">
 
-                    <h2 class="text-center">Let's Question!!</h4>
+                    <h2 class="text-center">Ouick Question!!</h4>
 
                     <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
 
@@ -123,8 +123,6 @@
 
                     <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>M</span>y <span>Q</span>uestions</strong></h1>
 
-
-
                     <% @questions.each do |question| %>
 
                       <div class="row">
@@ -148,7 +146,7 @@
 
                             <div class="d-flex justify-content-between align-items-center">
 
-                              <p><%= question.question %></p>
+                              <p class="question-contents"><%= question.question %></p>
 
                             </div>
 
@@ -210,5 +208,7 @@
   </div>
 
 </div>
+
+
 
 
