@@ -24,12 +24,12 @@
 
                 </div>
 
-                <div class="col-lg-4 col-sm-12 col-xs-12 mt-md-3 align-self-center">
+                <div class="col-lg-4 col-sm-12 col-xs-12 align-self-center">
 
                   <ul>
                     <li>Name <span><%= @user.user_name %></span></li>
                     <li>Favorite Game <span><%= @user.favorite_game %></span></li>
-                    <li>Introduction <p style="margin-top: 5px;"><%= @user.introduction %></p></li>
+                    <li>Introduction <p class="users-introduction"><%= @user.introduction %></p></li>
                     <p class="main-border-button">
                       <%= link_to edit_public_user_path, class: "btn btn-outline-danger" do %>
                        Edit User
@@ -121,7 +121,11 @@
 
                     <div><br></div>
 
-                    <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>M</span>y <span>Q</span>uestions</strong></h1>
+                    <% if @user.id == current_user.id %>
+                        <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>M</span>y <span>Q</span>uestions</strong></h1>
+                      <% else %>
+                        <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span><%= @user.user_name %></span>'s <span>Q</span>uestions</strong></h1>
+                    <% end %>
 
                     <% @questions.each do |question| %>
 

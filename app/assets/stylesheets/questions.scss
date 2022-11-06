@@ -3,8 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-// 投稿画面
-
 .container{
   max-width: 1320px;
 }
@@ -16,31 +14,58 @@ body .page-content {
   border-radius: 23px;
 }
 
+
+// 投稿画面
 h1 span{
   color: #ec6090;
   font-size: 40px;
 }
 
+label {
+  border-left:  10px groove #ec6090;
+  border-bottom: 1px solid #ec6090;
+  padding-left: 5px;
+  font-size: 25px;
+}
+
+.question-form {
+  margin-bottom: 25px;
+}
+
+.up-button{
+  margin-top: 3px;
+  text-align: center;
+}
+
+.up-button input{
+  font-size: 25px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 5px;
+  padding: 17px;
+}
+
 #question_title, #question_question_images, #question_question, #question_tag_name {
-  background-color: black;
+  font-family: "arial";
+  background-color: #1f2122;
   color: white;
 }
 
 
 // 一覧画面
-
-.user-info, .my-questions-title, .tag-title{
-  padding-bottom: 25px;
-}
-
-.user-info span, .my-questions-title span, .tag-title span {
-  color: #ec6090;
-}
-
-.user-info strong, .my-questions-title strong, .tag-title strong {
-  border-bottom: 3px groove #ec6090 ;
-}
-
 .my-questions {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -143,48 +168,4 @@ h1 span{
   padding: 0.1rem 0.7rem;
   border-left: solid 20px #FF82B2 ;
   border-bottom: solid 2px #FF82B2 ;
-}
-
-// 投稿画面
-label {
-  border-left:  10px groove #ec6090;
-  border-bottom: 1px solid #ec6090;
-  padding-left: 5px;
-  font-size: 25px;
-}
-
-.question-form {
-  margin-bottom: 25px;
-}
-
-.up-button{
-  margin-top: 3px;
-  text-align: center;
-}
-
-.up-button input{
-  font-size: 25px;
-  color: #ec6090;
-  background-color: transparent;
-  border: 1px solid #ec6090;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 50px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none !important;
-  // border: 1px solid #ec6090;
-  // border-radius: 100px;
-  margin: 5px;
-  padding: 17px;
-}
-
-#question_title, #question_question_images, #question_question, #question_tag_name {
-  font-family: "arial";
-  background-color: #1f2122;
-  color: white;
 }

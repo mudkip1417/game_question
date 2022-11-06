@@ -1,0 +1,58 @@
+.container{
+  max-width: 1320px;
+}
+
+body .page-content {
+  margin-top: 10px;
+  background-color: #27292a;
+  padding: 20px 30px 30px 30px;
+  border-radius: 23px;
+}
+
+h1 span{
+  color: #ec6090;
+  font-size: 40px;
+}
+
+label {
+  border-left:  10px groove #ec6090;
+  border-bottom: 1px solid #ec6090;
+  padding-left: 5px;
+  font-size: 25px;
+}
+
+.user-edit-form {
+  margin-bottom: 25px;
+}
+
+.edit-button{
+  margin-top: 3px;
+  text-align: center;
+}
+
+.edit-button input{
+  font-size: 25px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 5px;
+  padding: 17px;
+}
+
+#user_user_name, #user_profile_images, #user_email, #user_telephone_number, #user_favorite_game, #user_introduction {
+  font-family: "arial";
+  background-color: #1f2122;
+  color: white;
+}

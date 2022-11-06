@@ -148,12 +148,13 @@
 
     </header>
 
-    <div class="question-button">
-      <%= link_to new_public_question_path, class: "btn btn-outline-danger", style: "border-radius: 90px" do %>
-        <i class="fa-solid fa-question"></i><br>質問
-      <% end %>
-    </div>
-
+    <% if user_signed_in? %>
+      <div class="question-button">
+        <%= link_to new_public_question_path, class: "btn btn-outline-danger", style: "border-radius: 90px" do %>
+          <i class="fa-solid fa-question"></i><br>質問
+        <% end %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

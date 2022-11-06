@@ -8,17 +8,17 @@
 
       <div class="page-content">
 
-        <h1 class="h2 mb-4 font-weight-normal" style="text-align: center;"><strong><span>U</span>P <span>Q</span>UESTION</strong></h1>
+        <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>U</span>p <span>Q</span>uestion <span>!!</span></strong></h1>
 
         <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
 
           <div class="row">
 
-            <div class="col-lg-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
 
               <div class="question-form">
 
-                <label for="item_name">質問タイトル</label>
+                <label for="question_title">質問タイトル</label>
 
                 <%= f.text_area :title, class:'form-control item_name', placeholder: "質問のタイトルを入力。(50文字以内)" %>
 
@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="col-lg-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
 
               <div class="question-form">
 

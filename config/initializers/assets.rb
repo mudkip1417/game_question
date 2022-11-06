@@ -22,5 +22,6 @@ Rails.application.config.assets.precompile += %w(
 
   users.scss
   questions.scss
+  edit_users.scss
 
 )

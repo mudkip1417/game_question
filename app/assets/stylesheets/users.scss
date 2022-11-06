@@ -91,6 +91,7 @@ body .page-content {
   width: 100%;
   border-radius: 23px;
   padding: 20px;
+  margin-bottom: 0;
   background-color: #27292a;
 }
 
@@ -98,8 +99,8 @@ body .page-content {
   width: 100%;
   font-size: 14px;
   color: #ec6090;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #666;
   list-style: none;
 }
@@ -111,10 +112,12 @@ body .page-content {
   word-wrap: break-word;
 }
 
-.main-profile ul li p {
+.users-introduction {
   width: 100%;
   color: #BBBBBB;
   word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .main-border-button {
@@ -306,4 +309,6 @@ h2 {
 .content-border {
   border-bottom: 2px solid #666;
 }
+
+// ユーザー情報変更
 
