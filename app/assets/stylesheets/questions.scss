@@ -10,7 +10,7 @@
 }
 
 body .page-content {
-  margin-top: 50px;
+  margin-top: 30px;
   background-color: #27292a;
   padding: 30px;
   border-radius: 23px;
@@ -83,72 +83,13 @@ h1 span{
   border-bottom: 1px groove #ec6090;
 }
 
+.question-contents {
+  font-family: "arial";
+  color: #BBBBBB;
+}
+
 .show-link{
   margin-right: 20px;
-}
-
-.main-profile ul {
-  border-radius: 23px;
-  padding: 30px;
-  background-color: #27292a;
-}
-
-.main-profile ul li {
-  width: 100%;
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #666;
-  list-style: none;
-}
-
-.main-profile ul li span {
-  float: right;
-  font-weight: 500;
-  color: #ec6090;
-}
-
-.main-border-button {
-  margin-top: 40px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-.main-border-button a {
-  font-size: 14px;
-  color: #ec6090;
-  background-color: transparent;
-  border: 1px solid #ec6090;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 25px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none !important;
-}
-
-.align-self-center {
-  align-self: center!important;
-}
-
-.main-info p {
-  font-size: 15px;
-  color: #666;
-  line-height: 30px;
-  margin-bottom: 0px;
-}
-
-h2 {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  color: #ec6090;
-  border-bottom: 7px groove #ec6090 ;
-  padding-bottom: 15px;
 }
 
 .tag-name{
@@ -189,16 +130,61 @@ h2 {
   padding-bottom: 60px;
 }
 
-.user-info, .tag-title{
+// 項目タイトル
+.tag-title{
   padding-bottom: 30px;
 }
 
-.user-info span, .my-questions-title span, .tag-title span {
+.my-questions-title span, .tag-title span {
   color: #ec6090;
 }
 
-.user-info strong, .my-questions-title strong, .tag-title strong {
+.my-questions-title strong, .tag-title strong {
   padding: 0.1rem 0.7rem;
   border-left: solid 20px #FF82B2 ;
   border-bottom: solid 2px #FF82B2 ;
+}
+
+// 投稿画面
+label {
+  border-left:  10px groove #ec6090;
+  border-bottom: 1px solid #ec6090;
+  padding-left: 5px;
+  font-size: 25px;
+}
+
+.question-form {
+  margin-bottom: 25px;
+}
+
+.up-button{
+  margin-top: 3px;
+  text-align: center;
+}
+
+.up-button input{
+  font-size: 25px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 5px;
+  padding: 17px;
+}
+
+#question_title, #question_question_images, #question_question, #question_tag_name {
+  font-family: "arial";
+  background-color: #1f2122;
+  color: white;
 }

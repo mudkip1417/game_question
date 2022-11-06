@@ -8,71 +8,69 @@
 
       <div class="page-content">
 
-        <div class="row">
+        <h1 class="h2 mb-4 font-weight-normal" style="text-align: center;"><strong><span>U</span>P <span>Q</span>UESTION</strong></h1>
 
-          <div class="col-lg-2"></div>
-          <div class="col-lg-8">
+        <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
 
-            <div class="m-2 text-center">
+          <div class="row">
 
-              <h1 class="h2 mb-4 font-weight-normal"><strong><span>U</span>P <span>Q</span>UESTION</strong></h1>
+            <div class="col-lg-6 col-sm-6 col-xs-6">
 
-                <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
+              <div class="question-form">
 
-                  <div class="form-group">
+                <label for="item_name">質問タイトル</label>
 
-                    <label for="item_name">ゲームタイトル</label>
+                <%= f.text_area :title, class:'form-control item_name', placeholder: "質問のタイトルを入力。(50文字以内)" %>
 
-                    <%= f.text_field :title, class:'form-control item_name' %>
+              </div>
 
-                  </div>
+              <div class="question-form">
 
-                  <div class="form-group">
+                <label for="image">関連画像</label>
 
-                    <label for="item_name">関連画像</label>
+                <%= f.file_field :question_images, multiple: true, accept: "image/*", class:'form-control image' %>
 
-                    <%= f.file_field :question_images, multiple: true, accept: "image/*", class:'form-control image' %>
+              </div>
 
-                  </div>
+              <div class="question-form">
 
-                  <div class="form-group">
+                <label for="tag-name">タグ</label>
 
-                    <label for="item_introduction">質問内容</label>
+                <%= f.text_area :tag_name, class:'form-control', placeholder: "  , で区切ることで複数選択できます。" %>
 
-                    <%= f.text_area :question, class:'form-control' %>
+              </div>
 
-                  </div>
+            </div>
 
-                  <div class="form-group">
+            <div class="col-lg-6 col-sm-6 col-xs-6">
 
-                    <label for="item_introduction">タグ</label>
+              <div class="question-form">
 
-                    <%= f.text_field :tag_name, class:'form-control' %><br>
-                    <small>,で区切ることで複数選択できます。</small><br>
+                <label for="question-content">質問内容</label>
 
-                  </div>
+                <%= f.text_area :question, class:'form-control', placeholder: "質問内容を入力。（500文字以内）", size: '40x12' %>
 
-                  <!--<div class="form-group">-->
+              </div>
 
-                  <!--  <label for="item_introduction">Genre</label>-->
+                <!--<div class="form-group">-->
 
-                    <%#= f.collection_select :genre_id, Genre.all,:id,:name,{promit:"--選択してください--"}, {class:'form-control item_genre'} %>
+                <!--  <label for="item_introduction">Genre</label>-->
 
-                  <!--</div>-->
+                  <%#= f.collection_select :genre_id, Genre.all,:id,:name,{promit:"--選択してください--"}, {class:'form-control item_genre'} %>
 
-                  <div class="form-group">
-
-                    <%= f.submit '質問投稿', class:'btn btn-danger' %>
-
-                  </div>
-
-                <% end %>
+                <!--</div>-->
 
             </div>
 
           </div>
 
-        </div>
+          <div class="up-button" style="text-align-center">
+
+            <%= f.submit 'Up Question !!', class:'btn btn-danger' %>
+
+          </div>
+
+        <% end %>
 
       </div>
 
