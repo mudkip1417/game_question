@@ -31,7 +31,7 @@
                     <li>Favorite Game <span><%= @user.favorite_game %></span></li>
                     <li>Introduction <p class="users-introduction"><%= @user.introduction %></p></li>
                     <p class="main-border-button">
-                      <%= link_to edit_public_user_path, class: "btn btn-outline-danger" do %>
+                      <%= link_to edit_public_user_path, class: "btn btn-outline-light", style: "color: #ec6090;" do %>
                        Edit User
                       <% end %>
                     </p>
@@ -73,7 +73,7 @@
 
                       <div class="up-button">
 
-                        <%= f.submit 'Up Question!!', class:'btn btn-outline-danger' %>
+                        <%= f.submit 'Up Question!!', class:'btn btn-outline-light', style: "color: #ec6090;" %>
 
                       </div>
 
@@ -108,7 +108,7 @@
                     <div class="tag-list">
 
                       <% @tag_list.each do |list| %>
-                        <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-danger" do %>
+                        <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-outline-light" do %>
                           <span>
                             <i class="fas fa-tag"></i> <%= list.tag_name %><%= "(#{list.questions.count})" %>
                           </span>
