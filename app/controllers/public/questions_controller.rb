@@ -42,7 +42,7 @@ class Public::QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to public_questions_path
+    redirect_to public_user_path(current_user.id)
   end
 
   def search_tag

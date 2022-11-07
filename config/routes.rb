@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    resources :questions
     resources :questions do
       resources :comments, only: [:create,:destroy]
     end

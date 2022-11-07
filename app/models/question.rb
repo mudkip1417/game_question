@@ -2,9 +2,9 @@ class Question < ApplicationRecord
   has_one_attached :image
   has_many_attached:question_images
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :tagmaps, dependent: :destroy
-  has_many :tags, through: :tagmaps
+  has_many :tags, through: :tagmaps, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :comments, dependent: :destroy
 

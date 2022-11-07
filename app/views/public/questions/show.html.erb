@@ -59,7 +59,21 @@
 
                           <div class="text-right">
 
-                            <span><%= link_to "編集", edit_public_question_path(@question.id), class: "show-link" %></td>
+                            <% if @question.user.id == current_user.id %>
+
+                              <span>
+                                <%= link_to public_question_path(@question.id), class: "show-link", method: :delete do %>
+                                  <i class="fa-solid fa-trash-can"  style="color: red; font-size: 30px;"></i>
+                                <% end %>
+                              </span>
+
+                              <span>
+                                <%= link_to edit_public_question_path(@question.id), class: "show-link" do %>
+                                  <i class="fa-regular fa-pen-to-square" style="color: #FFCCFF; font-size: 30px;"></i>
+                                <% end %>
+                              </span>
+
+                            <% end %>
 
                             <span>
 
@@ -67,7 +81,7 @@
 
                                 <td>
                                   <%= link_to public_question_bookmarks_path(@question.id), method: :delete do %>
-                                    <i class="fa-solid fa-bookmark"  style="color: #ec6090; font-size: 30px;"></i>
+                                    <i class="fa-solid fa-bookmark"  style="color: #FFCCFF; font-size: 30px;"></i>
                                   <% end %>
                                 </td>
 
@@ -75,7 +89,7 @@
 
                                 <td>
                                   <%= link_to public_question_bookmarks_path(@question.id), method: :post do %>
-                                    <i class="fa-regular fa-bookmark" style="color: #ec6090; font-size: 30px;"></i>
+                                    <i class="fa-regular fa-bookmark" style="color: #FFCCFF; font-size: 30px;"></i>
                                   <% end %>
                                 </td>
 
@@ -103,13 +117,13 @@
 
                         <div class="row">
 
-                          <div class="col-lg-10 col-sm-12 col-xs-12 comment-form">
+                          <div class="col-lg-12 col-sm-12 col-xs-12 comment-form">
 
                             <%= f.text_area :comment, placeholder: "コメントをここに(500文字以内)", class:"form-control", size: "40x5" %>
 
                           </div>
 
-                          <div class="col-lg-2 col-sm-12 col-xs-12 up-button" style="text-align-center">
+                          <div class="col-lg-12 col-sm-12 col-xs-12 up-button">
 
                             <%= f.submit 'Comment!!', class:'btn btn-outline-light' %>
 
@@ -157,7 +171,7 @@
 
                               <% if user_signed_in? && comment.user == current_user %>
                                 <%= link_to public_question_comment_path(comment.question,comment), method: :delete do %>
-                                  <i class="fa-solid fa-trash-can" style="color: #ec6090; font-size: 30px;"></i>
+                                  <i class="fa-solid fa-trash-can" style="color: red; font-size: 30px;"></i>
                                 <% end %>
                                 <% elsif admin_signed_in? %>
                                 <%= link_to "管理者削除", admin_question_comment_path(comment.question,comment), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 8px;" %>

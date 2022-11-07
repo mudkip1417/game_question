@@ -38,7 +38,7 @@ body, nav{
 
 .question-button a i {
   font-size: 50px;
-  color: #ec6090;
+  color: #FF0033;
 }
 
 #word, #range, #search {
@@ -46,4 +46,8 @@ body, nav{
   border: 1px solid white;
   border-radius: 5px;
   color: white;
+}
+
+a:hover {
+  text-decoration: none;
 }

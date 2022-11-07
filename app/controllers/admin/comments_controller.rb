@@ -12,7 +12,7 @@ class Admin::CommentsController < ApplicationController
   def destroy
     Comment.find(params[:id]).destroy
     @question = Question.find(params[:question_id])
-    redirect_to admin_question_path(@question.id)
+    redirect_to public_question_path(@question.id)
   end
 
   private
