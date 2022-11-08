@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
   def index
+    @user = User.all
     @user = User.find(current_user.id)
     @question = Question.all
     @questions = @user.questions
@@ -11,6 +12,7 @@ class Public::UsersController < ApplicationController
     @users = User.all
     @questions = @user.questions
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
     @question = Question.new
   end
 

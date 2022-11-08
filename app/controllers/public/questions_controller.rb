@@ -4,6 +4,7 @@ class Public::QuestionsController < ApplicationController
     @users = User.all
     @questions = Question.all
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
   end
 
   def new
@@ -36,7 +37,11 @@ class Public::QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    @question.update(question_params)
+    if @question.update(question_params)
+      redirect_to public_question_path(@question.id)
+    else
+      render :edit
+    end
   end
 
   def destroy

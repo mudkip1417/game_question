@@ -80,7 +80,11 @@
 
                             <div class="text-right">
 
-                              <span><%= link_to "詳細", public_question_path(question.id), class: "show-link" %></small>
+                              <span>
+                                <%= link_to public_question_path(question.id), class: "show-link" do  %>
+                                  <i class="fa-solid fa-door-open" style="color: #FFCCFF; font-size: 30px;"></i>
+                                <% end %>
+                              </span>
 
                               <span>
 

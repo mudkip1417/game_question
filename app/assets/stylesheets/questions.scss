@@ -123,6 +123,11 @@ label {
 .tag-list {
   margin: 25px;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webpack-box;
+  line-height: 40px;
+  max-height: calc(37px*5);
 }
 
 .tag-list a {

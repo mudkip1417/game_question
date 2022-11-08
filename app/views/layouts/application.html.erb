@@ -17,7 +17,7 @@
 
     <header>
 
-      <nav class="navbar navbar-expand-lg navbar-light text-light fixed-top p-1">
+      <nav class="navbar navbar-expand-xl navbar-light text-light fixed-top p-1">
 
         <div class="container">
 
@@ -31,27 +31,33 @@
             <% end %>
           <% end %>
 
-          <% if user_signed_in? %>
-            <div class="search_form text-center">
-              <%= form_with url: public_search_path, local: true, method: :get do |f| %>
-                <%= f.text_field :word, placeholder: "検索..." %>
-                <%= f.select :range, options_for_select([['User'], ['Question']]), style: "color: #666;" %>
-                <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]), style: "color: #666;" %>
-                <%= f.submit "検索", class: "btn btn-outline-danger" ,style: "border-radius: 20%;" %>
-              <% end %>
-            </div>
-          <% end %>
-
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-
           </button>
 
-          <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
+          <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
 
-            <ul class="nav nav-tabs ml-auto">
+          <!--  <span class="navbar-toggler-icon"></span>-->
+
+          <!--</button>-->
+
+          <div class="navbar-collapse collapse" id="navbarNavDropdown">
+
+            <% if user_signed_in? %>
+              <div class="search_form">
+                <%= form_with url: public_search_path, local: true, method: :get do |f| %>
+                  <%= f.text_field :word, placeholder: "検索..." %>
+                  <%= f.select :range, options_for_select([['Question'], ['User']]), style: "color: #666;" %>
+                  <%#= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]), style: "color: #666;" %>
+                  <%= f.submit "検索", class: "btn btn-outline-light" ,style: "border-radius: 20%; color: #ec6090; border: 1px solid #ec6090;" %>
+                <% end %>
+              </div>
+            <% end %>
+
+
+            <ul class="navbar-nav nav-tabs ml-auto mb-2 mb-xl-0">
+
+
 
               <% if user_signed_in? %>
 
@@ -59,34 +65,33 @@
                  <!--<strong>ようこそ、<%#= current_user.first_name %>さん！</strong>-->
                 <!--</li>-->
 
-
                 <li class="nav-item">
                   <%= link_to public_user_path(current_user.id), class:'nav-link link-danger text-light' do  %>
-                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090;"></i> マイページ
+                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090; font-size: 20px;"></i> マイページ
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_questions_path, class:'nav-link text-light' do  %>
-                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090;"></i> 質問一覧
+                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090; font-size: 20px;"></i> 質問一覧
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_bookmarks_path, class:'nav-link text-light' do  %>
-                    ブックマーク一覧
+                    <i class="fa-solid fa-book-bookmark" style="color: #ec6090; font-size: 20px;"></i> ブックマーク一覧
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_groups_path, class:'nav-link text-light' do  %>
-                    グループ一覧
+                    <i class="fa-solid fa-people-group" style="color: #ec6090; font-size: 20px;"></i> グループ一覧
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to destroy_user_session_path, class:'nav-link text-light', method: :delete do  %>
-                    ログアウト
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ec6090; font-size: 20px;"></i> ログアウト
                   <% end %>
                 </li>
 

@@ -1,0 +1,81 @@
+<%= stylesheet_link_tag 'questions', :media => "all" %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>E</span>dit <span>Q</span>uestion <span>!!</span></strong></h1>
+
+        <%= form_with model: @question, url: public_question_path(@question.id), method: :patch do |f| %>
+
+          <div class="row">
+
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+
+              <div class="question-form">
+
+                <label for="question_title">質問タイトル</label>
+
+                <%= f.text_area :title, class:'form-control item_name', placeholder: "質問のタイトルを入力。(50文字以内)" %>
+
+              </div>
+
+              <div class="question-form">
+
+                <label for="image">関連画像</label>
+
+                <%= f.file_field :question_images, multiple: true, accept: "image/*", class:'form-control image' %>
+
+              </div>
+
+              <div class="question-form">
+
+                <label for="tag-name">タグ</label>
+
+                <%= f.text_area :tag_name, class:'form-control', placeholder: "  , で区切ることで複数選択できます。" %>
+
+              </div>
+
+            </div>
+
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+
+              <div class="question-form">
+
+                <label for="question-content">質問内容</label>
+
+                <%= f.text_area :question, class:'form-control', placeholder: "質問内容を入力。（500文字以内）", size: '40x12' %>
+
+              </div>
+
+                <!--<div class="form-group">-->
+
+                <!--  <label for="item_introduction">Genre</label>-->
+
+                  <%#= f.collection_select :genre_id, Genre.all,:id,:name,{promit:"--選択してください--"}, {class:'form-control item_genre'} %>
+
+                <!--</div>-->
+
+            </div>
+
+          </div>
+
+          <div class="up-button" style="text-align-center">
+
+            <%= f.submit 'Edit Question', class:'btn btn-outline-light', style: "color: #ec6090;" %>
+
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
