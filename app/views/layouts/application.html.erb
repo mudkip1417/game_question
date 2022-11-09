@@ -67,31 +67,31 @@
 
                 <li class="nav-item">
                   <%= link_to public_user_path(current_user.id), class:'nav-link link-danger text-light' do  %>
-                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090; font-size: 20px;"></i> マイページ
+                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090; font-size: 20px;"></i> Mypage
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_questions_path, class:'nav-link text-light' do  %>
-                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090; font-size: 20px;"></i> 質問一覧
+                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090; font-size: 20px;"></i> Questions
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_bookmarks_path, class:'nav-link text-light' do  %>
-                    <i class="fa-solid fa-book-bookmark" style="color: #ec6090; font-size: 20px;"></i> ブックマーク一覧
+                    <i class="fa-solid fa-book-bookmark" style="color: #ec6090; font-size: 20px;"></i> Bookmarks
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to public_groups_path, class:'nav-link text-light' do  %>
-                    <i class="fa-solid fa-people-group" style="color: #ec6090; font-size: 20px;"></i> グループ一覧
+                    <i class="fa-solid fa-people-group" style="color: #ec6090; font-size: 20px;"></i> Groups
                   <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to destroy_user_session_path, class:'nav-link text-light', method: :delete do  %>
-                    <i class="fa-solid fa-right-from-bracket" style="color: #ec6090; font-size: 20px;"></i> ログアウト
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ec6090; font-size: 20px;"></i> Logout
                   <% end %>
                 </li>
 

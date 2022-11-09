@@ -67,7 +67,9 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-    resources :groups, except: [:destroy]
+    resources :groups, except: [:destroy] do
+      resources :group_comments, only: [:create,:destroy]
+    end
   end
 
   namespace :public do

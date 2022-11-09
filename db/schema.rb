@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_11_132807) do
+ActiveRecord::Schema.define(version: 2022_11_09_141932) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 2022_10_11_132807) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "group_comments", force: :cascade do |t|
+    t.string "group_comment"
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_comments_on_group_id"
+    t.index ["user_id"], name: "index_group_comments_on_user_id"
   end
 
   create_table "group_users", force: :cascade do |t|
@@ -142,6 +152,8 @@ ActiveRecord::Schema.define(version: 2022_10_11_132807) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "questions"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "group_comments", "groups"
+  add_foreign_key "group_comments", "users"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "tagmaps", "questions"

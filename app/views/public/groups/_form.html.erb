@@ -1,22 +1,66 @@
-<%= form_with model: group, url: public_groups_path, method: :post do |f| %>
+<%= stylesheet_link_tag 'edit_users', :media => "all" %>
 
-  <div class="form-group">
-    <%= f.label :グループ名 %>
-    <%= f.text_field :name, class: 'form-control' %>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>C</span>reate <span>G</span>roup</strong></h1>
+
+        <%= form_with model: group, url: public_groups_path, method: :post do |f| %>
+
+          <div class="row">
+
+            <div class="col-lg-6 col-sm-6 col-xs-6">
+
+              <div class="user-edit-form">
+
+                <label for="user_name">グループ名</label>
+
+                <%= f.text_field :name, class:'form-control user_name', placeholder: "（15文字以内）" %>
+
+              </div>
+
+              <div class="user-edit-form">
+
+                <label for="user_image">グループ画像</label>
+
+                <%= f.file_field :image, class: 'form-control-file image', accept: "image/*" %>
+
+              </div>
+
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-6">
+
+              <div class="user-edit-form">
+
+                <label for="user_introduction">紹介文</label>
+
+                  <%= f.text_area :introduction, class:'form-control user_introduction', placeholder: "紹介文を入力（200文字以内）", size: '40x5' %>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="edit-button" style="text-align-center">
+
+            <%= f.submit 'Create Group!!', class:'btn btn-outline-light', style: "color: #ec6090;" %>
+
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="form-group">
-    <%= f.label :紹介文 %>
-    <%= f.text_area :introduction, class: 'form-control' %>
-  </div>
+</div>
 
-  <div class="form-group">
-    <label for="item_name">関連画像</label>
-      <%= f.file_field :image, accept: "image/*",  class:'form-control image' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-info' %>
-  </div>
-
-<% end %>

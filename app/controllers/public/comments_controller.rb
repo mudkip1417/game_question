@@ -4,7 +4,7 @@ class Public::CommentsController < ApplicationController
     @question = Question.find(params[:question_id])
     @comment = current_user.comments.new(comment_params)
     @comment.question_id = @question.id
-    if@comment.save
+    if @comment.save
       redirect_to public_question_path(@question.id)
     end
   end

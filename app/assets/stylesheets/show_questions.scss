@@ -74,11 +74,11 @@ body .page-content {
   margin: 25px 0 25px 0;
 }
 
-.up-button{
+.comment-button{
   text-align: right;
 }
 
-.up-button input{
+.comment-button input{
   font-size: 25px;
   color: #ec6090;
   background-color: transparent;
@@ -99,7 +99,7 @@ body .page-content {
   padding: 17px;
 }
 
-#comment_comment {
+#comment_comment, #group_comment_group_comment {
   font-family: "arial";
   background-color: #1f2122;
   color: white;
