@@ -1,0 +1,40 @@
+// 項目タイトル
+.my-questions-title {
+  padding-bottom: 60px;
+}
+
+.user-info, .tag-title{
+  padding-bottom: 30px;
+}
+
+.user-info span, .my-questions-title span, .tag-title span {
+  color: #ec6090;
+}
+
+.user-info strong, .my-questions-title strong, .tag-title strong {
+  padding: 0.1rem 0.7rem;
+  border-left: solid 20px #FF82B2 ;
+  border-bottom: solid 2px #FF82B2 ;
+}
+
+@media screen and (max-width:425px) {
+  .my-questions-title {
+    padding-bottom: 60px;
+    font-size: 20px;
+  }
+
+  .user-info, .tag-title{
+    padding-bottom: 30px;
+    font-size: 20px;
+  }
+
+  .user-info span, .my-questions-title span, .tag-title span {
+    color: #ec6090;
+  }
+
+  .user-info strong, .my-questions-title strong, .tag-title strong {
+    padding: 0.1rem 0.7rem;
+    border-left: solid 10px #FF82B2 ;
+    border-bottom: solid 1px #FF82B2 ;
+  }
+}

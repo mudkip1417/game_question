@@ -29,8 +29,10 @@ class Public::SearchesController < ApplicationController
 
     if @range == "User"
       @users = User.looks(params[:search], params[:word])
+      @users = User.order("id DESC")
     else
       @questions = Question.looks(params[:search], params[:word])
+      @questions = Question.order("id DESC")
     end
   end
 

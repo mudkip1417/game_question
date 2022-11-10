@@ -1,16 +1,18 @@
 class Public::UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
+    @users = User.order("id DESC")
     @user = User.find(current_user.id)
     @question = Question.all
     @questions = @user.questions
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
   end
 
   def show
     @user = User.find(params[:id])
     @users = User.all
-    @questions = @user.questions
+    @questions = @user.questions.order("id DESC")
     @tag_list = Tag.all
     @tag_list = Tag.order("id DESC")
     @question = Question.new

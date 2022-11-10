@@ -3,6 +3,7 @@ class Public::QuestionsController < ApplicationController
   def index
     @users = User.all
     @questions = Question.all
+    @questions = Question.order("id DESC")
     @tag_list = Tag.all
     @tag_list = Tag.order("id DESC")
   end
@@ -52,13 +53,15 @@ class Public::QuestionsController < ApplicationController
 
   def search_tag
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
     @tag = Tag.find(params[:tag_id])
-    @questions = @tag.questions
+    @questions = @tag.questions.order("id DESC")
     @users = User.all
   end
 
   def bookmark
     @bookmarks = Bookmark.where(user_id: current_user.id)
+    @bookmarks = Bookmark.order("id DESC")
   end
 
   private

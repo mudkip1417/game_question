@@ -2,6 +2,7 @@ class Public::GroupsController < ApplicationController
   def index
     @question = Question.new
     @groups = Group.all
+    @groups = Group.order("id DESC")
     @group = Group.new
   end
 

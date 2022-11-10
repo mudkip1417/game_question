@@ -197,58 +197,6 @@ h2 {
   padding: 10px;
 }
 
-// 項目タイトル
-.my-questions-title {
-  padding-bottom: 60px;
-}
-
-.user-info, .tag-title{
-  padding-bottom: 30px;
-}
-
-.user-info span, .my-questions-title span, .tag-title span {
-  color: #ec6090;
-}
-
-.user-info strong, .my-questions-title strong, .tag-title strong {
-  padding: 0.1rem 0.7rem;
-  border-left: solid 20px #FF82B2 ;
-  border-bottom: solid 2px #FF82B2 ;
-}
-
-// タグ一覧
-.tag-list {
-  margin: 25px;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webpack-box;
-  line-height: 40px;
-  max-height: calc(37px*5);
-}
-
-.tag-list a {
-  font-size: 14px;
-  color: white;
-  background-color: transparent;
-  border: 1px solid #ec6090;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 25px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none !important;
-  // border: 1px solid #ec6090;
-  // border-radius: 100px;
-  margin: 10px;
-  padding: 10px;
-}
-
-
 // 自分の質問一覧
 .my-questions {
   padding-top: 15px;
@@ -315,5 +263,59 @@ h2 {
   border-bottom: 2px solid #666;
 }
 
-// ユーザー情報変更
+@media screen and (max-width:425px) {
+.my-questions {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+.question-body p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.question-user-name{
+  color: #ec6090;
+  font-size: 15px;
+}
+
+.user_image_question {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-images {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.question-image {
+  aspect-ratio: 1/1;
+  margin: 5px 3px 3px 3px;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-title strong{
+  border-bottom: 1px groove #ec6090;
+}
+
+.question-contents {
+  font-family: "arial";
+  color: #BBBBBB;
+}
+
+.show-link{
+  margin-right: 20px;
+}
+
+.up-time{
+  float: right;
+}
+}

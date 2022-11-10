@@ -1,6 +1,7 @@
-<% if @range == "User" %>
+<%= stylesheet_link_tag 'questions', :media => "all" %>
+<%= stylesheet_link_tag 'titles', :media => "all" %>
 
-  <%= stylesheet_link_tag 'questions', :media => "all" %>
+<% if @range == "User" %>
 
   <div class="container">
 
@@ -84,8 +85,6 @@
   </div>
 
 <% else %>
-
-  <%= stylesheet_link_tag 'questions', :media => "all" %>
 
   <div class="container">
 
