@@ -45,7 +45,7 @@
               <div class="search_form">
                 <%= form_with url: public_search_path, local: true, method: :get do |f| %>
                   <%= f.text_field :word, placeholder: "検索..." %>
-                  <%= f.select :range, options_for_select([['Question'], ['User']]), style: "color: #666;" %>
+                  <%= f.select :range, options_for_select([['Question'], ['User'], ['Tag']]), style: "color: #666;" %>
                   <%#= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]), style: "color: #666;" %>
                   <%= f.submit "検索", class: "btn btn-outline-light" ,style: "border-radius: 20%; color: #ec6090; border: 1px solid #ec6090;" %>
                 <% end %>

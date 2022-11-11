@@ -30,9 +30,8 @@ class User < ApplicationRecord
     #   @user = User.where("last_name LIKE?","%#{word}")
     # elsif search == "partial_match"
       @user = User.where("user_name LIKE?","%#{word}%")
-    # else
     #   @user = User.all
-    # end
+
   end
 
   def self.guest

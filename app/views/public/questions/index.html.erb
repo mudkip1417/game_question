@@ -44,7 +44,7 @@
 
                       <div class="row">
 
-                        <div class="col-lg-2 col-sm-2 col-xs-2 my-questions">
+                        <div class="col-lg-2 col-sm-2 my-questions">
 
                           <%= link_to public_user_path(question.user.id) do %>
                             <%= image_tag question.user.get_profile_image, style: "border-radius: 50%;", class: "user_image_question" %>
@@ -52,7 +52,7 @@
 
                         </div>
 
-                        <div class="col-lg-10 col-sm-10 col-xs-10 my-questions">
+                        <div class="col-lg-10 col-sm-10 my-questions">
 
                           <p>
                             <span class="question-user-name" ><strong><%= question.user.user_name %></strong></span>

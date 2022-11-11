@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'questions', :media => "all" %>
 <%= stylesheet_link_tag 'titles', :media => "all" %>
+<%= stylesheet_link_tag 'tags', :media => "all" %>
 
 <% if @range == "User" %>
 
@@ -84,7 +85,7 @@
 
   </div>
 
-<% else %>
+<% elsif @range == "Question" %>
 
   <div class="container">
 
@@ -206,6 +207,62 @@
     </div>
 
   </div>
+
+<% else %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="main-profile">
+
+              <div class="row">
+
+                <div class="col-lg-12">
+
+                  <div class="album py-2">
+
+                    <h1 class="tag-title"><strong><i class="fa-solid fa-tags"></i><span>S</span>earch <span>T</span>ags</strong></h1>
+
+                    <div class="tag-list-search">
+
+                      <% @tag_list.each do |list| %>
+                        <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-outline-light" do %>
+                          <span>
+                            <i class="fas fa-tag"></i> <%= list.tag_name %><%= "(#{list.questions.count})" %>
+                          </span>
+                        <% end %>
+                      <% end %>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 <% end %>
 
