@@ -81,10 +81,9 @@ Rails.application.routes.draw do
     devise_scope :user do
       post 'users/guest_sign_in', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
     end
-    # get 'users/index'
-    # get 'users/show'
-    # get 'users/edit'
-    get 'users/unsubscribe'
+
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    patch 'users/withdraw/:id' => 'users#withdraw', as: 'withdraw'
 
     resources :users
     resources :groups do

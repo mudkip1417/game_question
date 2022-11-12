@@ -10,6 +10,18 @@
 
         <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>C</span>reate <span>G</span>roup</strong></h1>
 
+        <p class="errors">
+          <% if @group.errors.any? %>
+            <%= @group.errors.count %>つのエラーが発生しました
+            <ul class="error-details">
+              <% @group.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </p>
+
+
         <%= form_with model: group, url: public_groups_path, method: :post do |f| %>
 
           <div class="row">

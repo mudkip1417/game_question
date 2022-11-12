@@ -10,6 +10,11 @@ class User < ApplicationRecord
   has_many :group_comments, dependent: :destroy
   has_many :group_users, dependent: :destroy
 
+  validates :user_name, presence: true, uniqueness: true,
+                   length: { minimum: 2, maximum: 20 }
+
+  validates :introduction, length: { maximum: 200 }
+
   has_one_attached :profile_image
 
   def get_profile_image

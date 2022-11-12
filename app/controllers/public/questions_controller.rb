@@ -1,5 +1,7 @@
 class Public::QuestionsController < ApplicationController
 
+  before_action :correct_user, only: [:edit, :update]
+
   def index
     @users = User.all
     @questions = Question.all
@@ -63,6 +65,13 @@ class Public::QuestionsController < ApplicationController
     @bookmarks = Bookmark.where(user_id: current_user.id)
     @bookmarks = Bookmark.order("id DESC")
   end
+
+  def correct_user
+    @question = Question.find(params[:id])
+    @user = @question.user
+    redirect_to(public_questions_path) unless @user == current_user
+  end
+
 
   private
 

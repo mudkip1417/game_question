@@ -17,7 +17,7 @@
 
     <header>
 
-      <nav class="navbar navbar-expand-xl navbar-light text-light fixed-top p-1">
+      <nav class="navbar navbar-expand-xl navbar-dark text-dark fixed-top p-1">
 
         <div class="container">
 
@@ -31,11 +31,9 @@
             <% end %>
           <% end %>
 
-
-
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon navbar"></span>
 
           </button>
 
@@ -119,25 +117,7 @@
                   <% end %>
                 </li>
 
-              <% else %>
-
-                <li class="nav-item">
-                  <%= link_to new_user_registration_path, class:'nav-link text-light' do  %>
-                    会員登録
-                  <% end %>
-                </li>
-
-                <li class="nav-item">
-                  <%= link_to new_user_session_path, class:'nav-link text-light' do %>
-                    会員ログイン
-                  <% end %>
-                </li>
-
-                <li class="nav-item">
-                  <%= link_to public_questions_path, class:'nav-link text-light' do  %>
-                    質問一覧
-                  <% end %>
-                </li>
+                <% else %>
 
               <% end %>
 

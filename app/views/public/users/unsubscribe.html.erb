@@ -1,2 +1,52 @@
-<h1>Public::Users#unsubscribe</h1>
-<p>Find me in app/views/public/users/unsubscribe.html.erb</p>
+<%= stylesheet_link_tag 'withdraw', :media => "all" %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="main-profile">
+
+              <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>W</span>ithdraw <span>U</span>ser</strong></h1>
+
+              <div class="row">
+
+                <div class="col-12 quite">
+
+                  <h2></h2><strong>本当に退会しますか？</strong></h2>
+
+                    <div class="quite-msg">
+                      退会すると、会員情報登録や<br>
+                      これまで質問履歴が閲覧できなくなります。<br>
+                      <br>
+                      <span>退会する場合は,「退会する」をクリックしてください。</span>
+                    </div>
+                    <br>
+
+                    <span class="up-button"><%= link_to "退会しない", public_users_path(current_user.id), class: 'glyphicon glyphicon-home btn btn-outline-light' %></span>
+                    <span class="up-button-delete"><%= link_to "退会する", public_withdraw_path(current_user.id), method: :patch, data: {confirm: "本当に退会してもよろしいですか？"}, class: "glyphicon glyphicon-home btn btn-outline-danger" %></span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

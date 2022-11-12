@@ -1,4 +1,7 @@
 class Public::UsersController < ApplicationController
+
+  before_action :correct_user, only: [:edit, :update]
+
   def index
     @users = User.all
     @users = User.order("id DESC")
@@ -33,12 +36,25 @@ class Public::UsersController < ApplicationController
   end
 
   def unsubscribe
+    @user = User.find(current_user.id)
+  end
+
+  def withdraw
+    @user = User.find(current_user.id)
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
   private
 
   def user_params
     params.require(:user).permit(:user_name, :profile_image, :introduction, :email, :telephone_number, :favorite_game, :title, :question, :image)
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(public_user_path(current_user.id)) unless @user == current_user
   end
 
 end

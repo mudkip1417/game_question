@@ -8,6 +8,9 @@ class Question < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :question, presence: true, length: { maximum: 500 }
+
   # ブックマーク機能
   def bookmarked_by?(user)
     bookmarks.where(user_id: user).exists?

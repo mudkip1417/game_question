@@ -10,6 +10,17 @@
 
         <h1 class="h2 mb-5 font-weight-normal" style="text-align: center; font-size: 40px;"><strong><span>C</span>hange <span>U</span>ser <span>I</span>nfo</strong></h1>
 
+        <p class="errors">
+          <% if @user.errors.any? %>
+            <%= @uesr.errors.count %>つのエラーが発生しました
+            <ul class="error-details">
+              <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </p>
+
         <%= form_with model: @user, url: public_user_path(@user.id), method: :patch do |f| %>
 
           <div class="row">
@@ -20,7 +31,7 @@
 
                 <label for="user_name">ニックネーム</label>
 
-                <%= f.text_field :user_name, class:'form-control user_name', placeholder: "（15文字以内）" %>
+                <%= f.text_field :user_name, class:'form-control user_name', placeholder: "（20文字以内）" %>
 
               </div>
 
@@ -72,9 +83,21 @@
 
           </div>
 
-          <div class="edit-button" style="text-align-center">
+          <div class="row">
 
-            <%= f.submit 'Edit User', class:'btn btn-outline-light', style: "color: #ec6090;" %>
+            <div class="edit-button col-lg-4 col-sm-4 col-xs-4"></div>
+
+            <div class="edit-button col-lg-4 col-sm-4 col-xs-4">
+
+              <%= f.submit 'Edit User', class:'btn btn-outline-light', style: "color: #ec6090;" %>
+
+            </div>
+
+            <div class="delete-button col-lg-4 col-sm-4 col-xs-4">
+
+              <%= link_to '退会する', public_unsubscribe_path, class: "glyphicon glyphicon-tint btn btn-outline-danger"%>
+
+            </div>
 
           </div>
 
