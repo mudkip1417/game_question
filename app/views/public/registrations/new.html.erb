@@ -1,45 +1,51 @@
+<%= stylesheet_link_tag 'sign', :media => "all" %>
+
 <div class="container">
 
-  <div class="m-5 text-center">
+  <div class="row">
 
-    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "public/shared/error_messages", resource: resource %>
+      <%= image_tag 'Game.png', size: "600x600" %>
 
+    </div>
 
-      <div>
-        <%= f.label :user_name %><br>
-        <%= f.text_field :user_name %>
-      </div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "public/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <div class="question-form">
+          <label>メールアドレス</label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="question-form">
+          <label>ユーザーネーム</label>
+          <%= f.text_field :user_name, placeholder: "20文字以内", class: "form-control" %>
+        </div>
 
-      <div>
-        <%= f.label :telephone_number %><br>
-        <%= f.text_field :telephone_number %>
-      </div>
+        <div class="question-form">
+          <label>パスワード</label>
+          <%= f.password_field :password, placeholder: "6文字以上" , autocomplete: "new-password", class: "form-control" %>
+        </div>
 
-      <div class="mx-auto" style="width: 200px; margin-top: 20px;">
-        <%= f.submit "Sign up", class:"btn btn-lg btn-primary btn-block" %>
-      </div>
-    <% end %>
+        <div class="question-form">
+          <label>パスワード確認</label>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div class="question-form">
+          <label>電話番号</label>
+          <%= f.text_field :telephone_number, class: "form-control" %>
+        </div>
+
+        <div class="up-button" style="text-align-leftr">
+          <%= f.submit "Sign up", class:'btn btn-outline-light', style: "color: #ec6090;" %>
+        </div>
+      <% end %>
+
+    </div>
 
   </div>
 
