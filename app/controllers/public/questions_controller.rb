@@ -21,7 +21,7 @@ class Public::QuestionsController < ApplicationController
     if @question.save
       @question.save_tag(tag_list)
       # binding.pry
-      redirect_to public_user_path(current_user.id)
+      redirect_to public_question_path(@question.id)
     else
       render:new
     end
