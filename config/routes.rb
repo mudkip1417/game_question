@@ -25,9 +25,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    # get 'groups/index'
-    # get 'groups/show'
-    # get 'groups/edit'
     resources :groups
   end
 

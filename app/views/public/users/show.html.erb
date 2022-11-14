@@ -51,7 +51,7 @@
 
                       <div class="title-form">
 
-                        <%= f.text_field :title, placeholder: "質問タイトル", class:'form-control' %>
+                        <%= f.text_field :title, placeholder: "質問タイトル(100文字以内)", class:'form-control', autofocus: true, maxlength: "100" %>
 
                       </div>
 
@@ -69,7 +69,7 @@
 
                       <div class="question-form">
 
-                        <%= f.text_area :question, placeholder: "質問内容", class:'form-control', size: '40x5' %>
+                        <%= f.text_area :question, placeholder: "質問内容", class:'form-control', size: '40x5', autofocus: true, maxlength: "500" %>
 
                       </div>
 

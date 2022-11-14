@@ -8,7 +8,7 @@ class Question < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :title, presence: true, length: { maximum: 50 }
+  validates :title, presence: true, length: { maximum: 200 }
   validates :question, presence: true, length: { maximum: 500 }
 
   # ブックマーク機能
