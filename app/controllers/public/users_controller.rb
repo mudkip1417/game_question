@@ -3,7 +3,7 @@ class Public::UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.all.order("id DESC").page(params[:page]).per(20)
     @users = User.order("id DESC")
     @user = User.find(current_user.id)
     @question = Question.all
@@ -15,7 +15,7 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
-    @questions = @user.questions.order("id DESC")
+    @questions = @user.questions.order("id DESC").page(params[:page]).per(20)
     @tag_list = Tag.all
     @tag_list = Tag.order("id DESC")
     @question = Question.new

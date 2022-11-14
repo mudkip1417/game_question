@@ -4,8 +4,8 @@ class Public::QuestionsController < ApplicationController
 
   def index
     @users = User.all
-    @questions = Question.all
-    @questions = Question.order("id DESC")
+    @questions = Question.all.order("id DESC").page(params[:page]).per(20)
+    # @questions = Question.order("id DESC").page(params[:page]).per(20)
     @tag_list = Tag.all
     @tag_list = Tag.order("id DESC")
   end
@@ -63,7 +63,7 @@ class Public::QuestionsController < ApplicationController
 
   def bookmark
     @bookmarks = Bookmark.where(user_id: current_user.id)
-    @bookmarks = Bookmark.order("id DESC")
+    @bookmarks = Bookmark.order("id DESC").page(params[:page]).per(20)
   end
 
   def correct_user

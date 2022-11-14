@@ -1,8 +1,8 @@
 class Public::GroupsController < ApplicationController
   def index
     @question = Question.new
-    @groups = Group.all
-    @groups = Group.order("id DESC")
+    @groups = Group.all.order("id DESC").page(params[:page]).per(20)
+    # @groups = Group.order("id DESC")
     @group = Group.new
   end
 
