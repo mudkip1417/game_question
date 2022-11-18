@@ -29,7 +29,7 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = 'User was successfully updated.'
-      redirect_to new_user_session_path
+      redirect_to public_user_path(@user.id)
     else
       render :edit
     end

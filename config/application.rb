@@ -20,5 +20,12 @@ module GameQuestion
     config.time_zone = "Tokyo"
     config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
+    # config/application.rb
+
+    # デフォルトのロケールを:en以外に変更する
+    config.i18n.default_locale = :ja
+
+    # I18nライブラリに訳文の探索場所を指示する
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
   end
 end

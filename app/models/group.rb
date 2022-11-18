@@ -5,6 +5,9 @@ class Group < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :group_comments, dependent: :destroy
 
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :introduction, presence: true, length: { maximum: 200 }
+
   def get_image
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/sample-author1.jpg')
