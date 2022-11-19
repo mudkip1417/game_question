@@ -120,8 +120,6 @@ ActiveRecord::Schema.define(version: 2022_11_12_061053) do
     t.integer "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_tagmaps_on_question_id"
-    t.index ["tag_id"], name: "index_tagmaps_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -157,6 +155,4 @@ ActiveRecord::Schema.define(version: 2022_11_12_061053) do
   add_foreign_key "group_comments", "users"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
-  add_foreign_key "tagmaps", "questions"
-  add_foreign_key "tagmaps", "tags"
 end
