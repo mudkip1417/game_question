@@ -52,16 +52,9 @@
               </div>
             <% end %>
 
-
             <ul class="navbar-nav nav-tabs ml-auto mb-2 mb-xl-0">
 
-
-
               <% if user_signed_in? %>
-
-                <!--<li class="customer-name">-->
-                 <!--<strong>ようこそ、<%#= current_user.first_name %>さん！</strong>-->
-                <!--</li>-->
 
                 <li class="nav-item">
                   <%= link_to public_user_path(current_user.id), class:'nav-link link-danger text-light' do  %>
@@ -96,26 +89,26 @@
               <% elsif admin_signed_in? %>
 
                 <li class="nav-item">
-                  <%#= link_to admin_users_path, class:'nav-link text-light' do  %>
-                    ユーザー一覧
-                  <%# end %>
+                  <%= link_to admin_users_path, class:'nav-link link-danger text-light' do  %>
+                    <i class="fa-solid fa-user-astronaut" style="color: #ec6090; font-size: 20px;"></i> Users
+                  <% end %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to admin_questions_path, class:'nav-link text-light' do  %>
+                    <i class="fa-solid fa-clipboard-question" style="color: #ec6090; font-size: 20px;"></i> Questions
+                  <% end %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to admin_groups_path, class:'nav-link text-light' do  %>
-                    グループ一覧
+                    <i class="fa-solid fa-people-group" style="color: #ec6090; font-size: 20px;"></i> Groups
                   <% end %>
                 </li>
 
                 <li class="nav-item">
-                  <%= link_to admin_games_path, class:'nav-link text-light' do  %>
-                    ジャンル一覧
-                  <% end %>
-                </li>
-
-                <li class="nav-item">
-                  <%= link_to destroy_admin_session_path, class:'nav-link text-light',method: :delete  do  %>
-                    ログアウト
+                  <%= link_to destroy_admin_session_path, class:'nav-link text-light', method: :delete do  %>
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ec6090; font-size: 20px;"></i> Logout
                   <% end %>
                 </li>
 
@@ -141,5 +134,6 @@
       </div>
     <% end %>
     <%= yield %>
+
   </body>
 </html>

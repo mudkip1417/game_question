@@ -1,8 +1,27 @@
 class Admin::QuestionsController < ApplicationController
-
   def index
-    @questions = Question.all
+    @users = User.all
+    @questions = Question.all.order("id DESC").page(params[:page]).per(20)
+    # @questions = Question.order("id DESC").page(params[:page]).per(20)
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
+  end
+
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = Question.new(question_params)
+    @question.user_id = current_user.id
+    tag_list = params[:question][:tag_name].split(',')
+    if @question.save
+      @question.save_tag(tag_list)
+      # binding.pry
+      redirect_to public_question_path(@question.id)
+    else
+      render:new
+    end
   end
 
   def show
@@ -18,26 +37,42 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    @question.update(question_params)
+    if @question.update(question_params)
+      redirect_to public_question_path(@question.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to public_questions_path
+    redirect_to admin_questions_path
   end
 
   def search_tag
     @tag_list = Tag.all
+    @tag_list = Tag.order("id DESC")
     @tag = Tag.find(params[:tag_id])
-    @questions = @tag.questions
+    @questions = @tag.questions.order("id DESC")
+    @users = User.all
   end
+
+  def bookmark
+    @bookmarks = Bookmark.where(user_id: current_user.id)
+    @bookmarks = Bookmark.order("id DESC").page(params[:page]).per(20)
+  end
+
+  def correct_user
+    @question = Question.find(params[:id])
+    @user = @question.user
+    redirect_to(public_questions_path) unless @user == current_user
+  end
+
 
   private
 
   def question_params
-    params.require(:question).permit(:title,:question,:game_id,:image)
+    params.require(:question).permit(:title,:question,:game_id,:image, question_images: [])
   end
-
-
 end

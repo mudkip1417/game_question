@@ -60,5 +60,4 @@ class Public::GroupsController < ApplicationController
     params.require(:group).permit(:name,:introduction,:image)
   end
 
-
 end

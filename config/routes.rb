@@ -11,22 +11,48 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    resources :comments
+    resources :questions, except: [:index] do
+      resource :bookmarks, only: [:create, :destroy]
+    end
   end
-
   namespace :admin do
     resources :games
   end
 
   namespace :admin do
+    resources :questions
     resources :questions do
-      resources :comments, only: [:create,:destroy]
+      resources :comments, only: [:destroy]
+    end
+    get 'bookmarks' => 'questions#bookmark'
+  end
+
+  namespace :admin do
+    resources :tags
+  end
+
+  namespace :admin do
+    resources :groups, except: [:destroy] do
+      resources :group_comments, only: [:create,:destroy]
     end
   end
 
   namespace :admin do
-    resources :groups
+    get "search" => "searches#search"
+    get "search_tag" => "questions#search_tag"
   end
+
+  namespace :admin do
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
+    end
+
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    patch 'users/withdraw/:id' => 'users#withdraw', as: 'withdraw'
+
+    resources :users
+    resources :groups
+    end
 
   #ユーザー
   devise_for :users, skip: [:passwords], controllers: {
@@ -34,20 +60,12 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  # namespace :public do
-  #   # get 'comments/index'
-  #   # get 'comments/show'
-  #   # get 'comments/edit'
-  #   resources :comments
-  # end
   namespace :public do
     resources :questions, except: [:index] do
       resource :bookmarks, only: [:create, :destroy]
     end
   end
   namespace :public do
-    # get 'games/index'
-    # get 'games/show'
     resources :games
   end
 

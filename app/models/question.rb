@@ -9,7 +9,7 @@ class Question < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 200 }
-  validates :question, presence: true, length: { maximum: 500 }
+  validates :question, presence: true, length: { maximum: 1000 }
 
   # ブックマーク機能
   def bookmarked_by?(user)

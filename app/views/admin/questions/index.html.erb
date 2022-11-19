@@ -1,2 +1,126 @@
-<h1>Admin::Questions#index</h1>
-<p>Find me in app/views/admin/questions/index.html.erb</p>
+<%= stylesheet_link_tag 'questions', :media => "all" %>
+<%= stylesheet_link_tag 'tags', :media => "all" %>
+<%= stylesheet_link_tag 'titles', :media => "all" %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="page-content">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="main-profile">
+
+              <div class="row">
+
+                <div class="col-lg-12">
+
+                  <div class="album py-2">
+
+                    <h1 class="tag-title"><strong><i class="fa-solid fa-tags"></i> <span>T</span>ags</strong></h1>
+
+                    <div class="tag-list">
+
+                      <% @tag_list.each do |list| %>
+                        <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-outline-light" do %>
+                          <span>
+                            <i class="fas fa-tag"></i> <%= list.tag_name %><%= "(#{list.questions.count})" %>
+                          </span>
+                        <% end %>
+                      <% end %>
+
+                    </div>
+
+                    <div><br></div>
+
+                    <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>E</span>veryone's <span>Q</span>uestions</strong></h1>
+
+                    <% @questions.each do |question| %>
+
+                      <div class="row">
+
+                        <div class="col-lg-2 col-sm-2 my-questions">
+
+                          <%= link_to public_user_path(question.user.id) do %>
+                            <%= image_tag question.user.get_profile_image, style: "border-radius: 50%;", class: "user_image_question" %>
+                          <% end %>
+
+                        </div>
+
+                        <div class="col-lg-10 col-sm-10 my-questions">
+
+                          <p>
+                            <span class="question-user-name" ><strong><%= question.user.user_name %></strong></span>
+                            <span class="up-time text-muted"><%= question.created_at.strftime("%Y年 %m月 %d日 %H:%M") %></span>
+                          </p>
+
+                          <div class="question-body">
+
+                            <p class="question-title"><strong><%= question.title %></strong></p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                              <p class="question-contents"><%= question.question %></p>
+
+                            </div>
+
+                            <div class="question-images">
+                              <% if question.question_images.attached? %>
+                                <% question.question_images.each do |image| %>
+                                  <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
+                                <% end %>
+                              <% end %>
+                            </div>
+
+                            <div class="text-right">
+
+                              <span>
+                                <%= link_to admin_question_path(question.id), class: "show-link" do  %>
+                                  <i class="fa-solid fa-door-open" style="color: #ec6090; font-size: 30px;"></i>
+                                <% end %>
+                              </span>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="border-bottom border-dark"></div>
+
+                    <% end %>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-3"></div>
+                <div class="col-lg-6 col-sm-6 col-xs-6 pagi-nation">
+                  <%= paginate @questions %>
+                </div>
+              <div class="col-lg-3 col-sm-3 col-xs-3"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

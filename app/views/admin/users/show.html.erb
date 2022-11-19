@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'questions', :media => "all" %>
+<%= stylesheet_link_tag 'users', :media => "all" %>
 <%= stylesheet_link_tag 'tags', :media => "all" %>
 <%= stylesheet_link_tag 'titles', :media => "all" %>
 
@@ -11,6 +11,89 @@
       <div class="page-content">
 
         <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="main-profile">
+
+              <h1 class="user-info"><strong><i class="fa-solid fa-user-astronaut"></i> <span>U</span>ser <span>I</span>nfo</strong></h1>
+
+              <div class="row">
+
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+
+                  <%= image_tag @user.get_profile_image, style: "border-radius: 23px;", class: "user-image" %>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-xs-12 align-self-center">
+
+                  <ul>
+                    <li>Name <span><%= @user.user_name %></span></li>
+                    <li>Favorite Game <span><%= @user.favorite_game %></span></li>
+                    <li>Introduction <p class="users-introduction"><%= @user.introduction %></p></li>
+                    <p class="main-border-button">
+                      <%= link_to edit_public_user_path, class: "btn btn-outline-light", style: "color: #ec6090;" do %>
+                       Edit User
+                      <% end %>
+                    </p>
+                  </ul>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+
+                  <div class="main-info header-text">
+
+                    <h2 class="text-center">Ouick Question!!</h4>
+
+                    <%= form_with model: @question, url: public_questions_path, method: :post do |f| %>
+
+                      <div class="title-form">
+
+                        <%= f.text_field :title, placeholder: "質問タイトル(100文字以内)", class:'form-control', autofocus: true, maxlength: "100" %>
+
+                      </div>
+
+                      <div class="image-form">
+
+                        <%= f.file_field :question_images, multiple: true, accept: "image/*", placeholder: "関連画像", class:'form-control' %>
+
+                      </div>
+
+                      <div class="tag-form">
+
+                          <%= f.text_field :tag_name, placeholder: "タグ  ”,”で区切ると複数投稿できます", class:'form-control' %>
+
+                      </div>
+
+                      <div class="question-form">
+
+                        <%= f.text_area :question, placeholder: "質問内容", class:'form-control', size: '40x5', autofocus: true, maxlength: "500" %>
+
+                      </div>
+
+                      <div class="up-button">
+
+                        <%= f.submit 'Up Question!!', class:'btn btn-outline-light', style: "color: #ec6090;" %>
+
+                      </div>
+
+                    <% end %>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row mt-4">
 
           <div class="col-lg-12">
 
@@ -36,26 +119,30 @@
 
                     </div>
 
+                    <div class="pt-4 mb-5 content-border"></div>
+
                     <div><br></div>
 
-                    <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>E</span>veryone's <span>Q</span>uestions</strong></h1>
+                    <% if @user.id == current_user.id %>
+                        <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>M</span>y <span>Q</span>uestions</strong></h1>
+                      <% else %>
+                        <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span><%= @user.user_name %></span>'s <span>Q</span>uestions</strong></h1>
+                    <% end %>
 
                     <% @questions.each do |question| %>
 
                       <div class="row">
 
-                        <div class="col-lg-2 col-sm-2 my-questions">
+                        <div class="col-lg-2 col-sm-2 col-xs-2 my-questions">
 
-                          <%= link_to public_user_path(question.user.id) do %>
-                            <%= image_tag question.user.get_profile_image, style: "border-radius: 50%;", class: "user_image_question" %>
-                          <% end %>
+                          <%= image_tag @user.get_profile_image, style: "border-radius: 50%;", class: "user_image_question" %>
 
                         </div>
 
-                        <div class="col-lg-10 col-sm-10 my-questions">
+                        <div class="col-lg-10 col-sm-10 col-xs-10 my-questions">
 
                           <p>
-                            <span class="question-user-name" ><strong><%= question.user.user_name %></strong></span>
+                            <span class="question-user-name" ><strong><%= @user.user_name %></strong></span>
                             <span class="up-time text-muted"><%= question.created_at.strftime("%Y年 %m月 %d日 %H:%M") %></span>
                           </p>
 
@@ -69,7 +156,7 @@
 
                             </div>
 
-                            <div class="question-images">
+                            <div class="col-lg-12 col-sm-12 col-xs-12 question-images">
                               <% if question.question_images.attached? %>
                                 <% question.question_images.each do |image| %>
                                   <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
@@ -77,6 +164,7 @@
                               <% end %>
                             </div>
 
+                            <br>
                             <div class="text-right">
 
                               <span>
@@ -91,7 +179,7 @@
 
                                   <td>
                                     <%= link_to public_question_bookmarks_path(question.id), method: :delete do %>
-                                      <i class="fa-solid fa-bookmark"  style="color: #ec6090; font-size: 30px;"></i>
+                                      <i class="fa-solid fa-bookmark" style="color: #ec6090; font-size: 30px;"></i>
                                     <% end %>
                                   </td>
 
@@ -146,3 +234,7 @@
   </div>
 
 </div>
+
+
+
+

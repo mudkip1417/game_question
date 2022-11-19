@@ -31,15 +31,15 @@
 
                 <label for="question_title">質問タイトル</label>
 
-                <%= f.text_area :title, class:'form-control item_name', placeholder: "質問のタイトルを入力。(100文字以内)", autofocus: true, maxlength: "100" %>
+                <%= f.text_area :title, class:'form-control item_name', placeholder: "質問のタイトルを入力。(200文字以内)", autofocus: true, maxlength: "200" %>
 
               </div>
 
               <div class="question-form">
 
-                <label for="image">関連画像</label>
+                <label for="image">関連画像</label><br>
 
-                <%= f.file_field :question_images, multiple: true, accept: "image/*", class:'form-control image' %>
+                <%= f.file_field :question_images, multiple: true, accept: "image/*", class:'image' %>
 
               </div>
 
@@ -59,7 +59,7 @@
 
                 <label for="question-content">質問内容</label>
 
-                <%= f.text_area :question, class:'form-control', placeholder: "質問内容を入力。（500文字以内）", size: '40x12', autofocus: true, maxlength: "500" %>
+                <%= f.text_area :question, class:'form-control', placeholder: "質問内容を入力。（1000文字以内）", size: '40x12', autofocus: true, maxlength: "1000" %>
 
               </div>
 
