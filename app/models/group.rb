@@ -6,7 +6,7 @@ class Group < ApplicationRecord
   has_many :group_comments, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
-  validates :introduction, presence: true, length: { maximum: 200 }
+  validates :introduction, presence: true, length: { maximum: 1000 }
 
   def get_image
     unless image.attached?
