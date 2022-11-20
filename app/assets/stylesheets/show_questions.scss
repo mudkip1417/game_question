@@ -120,3 +120,133 @@ body .page-content {
   border-left: solid 20px #FF82B2 ;
   border-bottom: solid 2px #FF82B2 ;
 }
+
+@media screen and (max-width:425px) {
+  .container{
+  max-width: 1320px;
+}
+
+body .page-content {
+  margin-top: 30px;
+  background-color: #27292a;
+  padding: 30px;
+  border-radius: 23px;
+}
+
+.my-questions {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.question-body p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.question-user-name{
+  color: #ec6090;
+  font-size: 20px;
+}
+
+.user_image_question {
+  aspect-ratio: 1/1;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-images {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.question-image {
+  aspect-ratio: 3/2;
+  margin: 10px 5px 5px 5px;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-title strong{
+  border-bottom: 1px groove #ec6090;
+}
+
+.question-contents {
+  font-family: "arial";
+  color: #BBBBBB;
+}
+
+.show-link{
+  margin-right: 20px;
+}
+
+
+.up-time{
+  float: right;
+  font-size: 15px;
+}
+
+.my-questions-title {
+  padding-bottom: 30px;
+}
+
+.comment-form{
+  margin: 25px 0 25px 0;
+}
+
+.comment-button{
+  text-align: right;
+}
+
+.comment-button input{
+  font-size: 15px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 2px;
+  padding: 15px;
+}
+
+#comment_comment, #group_comment_group_comment {
+  font-family: "arial";
+  background-color: #1f2122;
+  color: white;
+  border-radius: 23px;
+}
+
+p, .my-questions span {
+  font-size: 15px;
+}
+
+// 項目タイトル
+.comments{
+  padding-bottom: 30px;
+}
+
+.my-questions-title span, .comments span {
+  color: #ec6090;
+}
+
+.my-questions-title strong, .comments strong {
+  padding: 0.1rem 0.7rem;
+  border-left: solid 20px #FF82B2 ;
+  border-bottom: solid 2px #FF82B2 ;
+}
+
+}

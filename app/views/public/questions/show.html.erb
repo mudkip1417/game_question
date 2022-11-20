@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'show_questions', :media => "all" %>
+<%= stylesheet_link_tag 'titles', :media => "all" %>
 
 <div class="container">
 
@@ -36,7 +37,7 @@
 
                         <p>
                           <span class="question-user-name" ><strong><%= @question.user.user_name %></strong></span>
-                          <span class="up-time text-muted"><%= @question.created_at.strftime("%Y年 %m月 %d日 %H:%M") %></span>
+                          <span class="up-time text-muted"><%= @question.created_at.strftime("%Y/%m/%d/%H:%M") %></span>
                         </p>
 
                         <div class="question-body">
@@ -107,7 +108,7 @@
 
                     <div class="mb-5 border-bottom border-dark"></div>
 
-                    <h1 class="comments"><strong><i class="fa-solid fa-comment-dots"></i> <span>U</span>p <span>C</span>mment <span>!!</span></strong></h1>
+                    <h1 class="comments my-questions-title"><strong><i class="fa-solid fa-comment-dots"></i> <span>U</span>p <span>C</span>mment <span>!!</span></strong></h1>
 
                     <div class="row">
 
@@ -138,7 +139,7 @@
                     </div>
                     <br>
 
-                    <h1 class="comments"><strong><i class="fa-solid fa-comments"></i> <span>C</span>omments</strong></h1>
+                    <h1 class="comments my-questions-title"><strong><i class="fa-solid fa-comments"></i> <span>C</span>omments</strong></h1>
 
                     <% @question.comments.each do |comment| %>
 

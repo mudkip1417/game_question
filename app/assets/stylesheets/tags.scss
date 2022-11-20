@@ -71,11 +71,44 @@
   }
 
   .tag-list a {
-    font-size: 5px;
+    font-size: 7px;
     color: white;
     background-color: transparent;
     border: 1px solid #ec6090;
-    padding: 7px 15px;
+    padding: 7px 10px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+    // border: 1px solid #ec6090;
+    // border-radius: 100px;
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .tag-list {
+    margin: 15px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webpack-box;
+    line-height: 40px;
+    max-height: calc(40px*5);
+  }
+
+  .tag-list a {
+    font-size: 7px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #ec6090;
+    padding: 7px 10px;
     display: inline-block;
     border-radius: 25px;
     font-weight: 400;

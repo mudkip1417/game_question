@@ -132,6 +132,11 @@ label {
   padding-left: none;
 }
 
+.question-user-name{
+  color: #ec6090;
+  font-size: 25px;
+}
+
 .question-body p {
   width: 100%;
   word-wrap: break-word;
@@ -144,7 +149,7 @@ label {
 
 .user_image_question {
   aspect-ratio: 1/1;
-  width: 100%;
+  width: 30%;
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
@@ -183,6 +188,95 @@ label {
 }
 
 p, .my-questions span {
+  font-size: 20px;
+}
+}
+
+@media screen and (max-width:375px) {
+.my-questions {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: none;
+  padding-left: none;
+}
+
+.question-body p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.question-user-name{
+  color: #ec6090;
   font-size: 15px;
+}
+
+.user_image_question {
+  aspect-ratio: 1/1;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-images {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.question-image {
+  aspect-ratio: 1/1;
+  margin: 5px 3px 3px 3px;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}
+
+.question-title{
+  font-size: 15px;
+}
+
+.question-title strong{
+  border-bottom: 1px groove #ec6090;
+}
+
+.question-contents {
+  font-family: "arial";
+  color: #BBBBBB;
+}
+
+.show-link{
+  margin-right: 20px;
+}
+
+.up-time{
+  float: right;
+  font-size: 15px;
+}
+
+p, .my-questions span {
+  font-size: 15px;
+}
+
+.up-button input, .up-button a {
+  font-size: 20px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  // border: 1px solid #ec6090;
+  // border-radius: 100px;
+  margin: 15px;
+  padding: 15px;
 }
 }

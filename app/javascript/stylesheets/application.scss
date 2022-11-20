@@ -148,3 +148,26 @@ a:hover {
     border: 2px solid #666;
   }
 }
+
+@media screen and (max-width:375px) {
+  .question-button {
+    position: fixed;
+    top: 20%;
+    left: 75%;
+    z-index: 10000;
+  }
+
+  .question-button a i {
+    font-size: 25px;
+    color: #FF0033;
+  }
+
+  .question-button a {
+    width: 80px;
+    height: 80px;
+    color: weight;
+    border-radius: 50%;
+    font-size: 20px;
+    border: 2px solid #666;
+  }
+}
