@@ -4,13 +4,13 @@
 
   <div class="row">
 
-    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+    <div class="col-lg-6 col-sm-12 col-xs-12 game_question_img_box">
 
-      <%= image_tag 'Game.png' %>
+      <%= image_tag 'Game.png', class: "game_question_img" %>
 
     </div>
 
-    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+    <div class="col-lg-6 col-sm-12 col-xs-12">
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "public/shared/error_messages", resource: resource %>
