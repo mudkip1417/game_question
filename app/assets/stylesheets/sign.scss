@@ -71,7 +71,17 @@ label {
     text-align: center;
   }
   .game_question_img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width:375px){
+  .game_question_img_box{
+    text-align: center;
+  }
+  .game_question_img {
+    width: 300px;
+    height: 300px;
   }
 }
