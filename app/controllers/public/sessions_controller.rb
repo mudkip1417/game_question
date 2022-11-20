@@ -13,9 +13,8 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   def guest_sign_in
-    user = User.guest
-    sign_in user
-    redirect_to public_users_path, notice: 'ゲストユーザーとしてログインしました。'
+    sign_in User.guest
+    redirect_to public_user_path(current_user.id), notice: 'ゲストユーザーとしてログインしました。'
   end
 
   def reject_user

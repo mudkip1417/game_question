@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     devise_scope :user do
-      post 'users/guest_sign_in', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
+      post 'users/:id', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
     end
 
     get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
@@ -71,7 +71,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     resources :questions
-    resources :questions do
+    resources :questions, except: [:destroy] do
       resources :comments, only: [:create,:destroy]
     end
     get 'bookmarks' => 'questions#bookmark'
@@ -94,9 +94,11 @@ Rails.application.routes.draw do
 
   namespace :public do
     devise_scope :user do
-      post 'users/guest_sign_in', to: 'sessions#guest_sign_in', as: 'guest_sign_in'
+      post 'user/guest_sign_in' => 'sessions#guest_sign_in', as: 'guest_sign_in'
     end
+  end
 
+  namespace :public do
     get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     patch 'users/withdraw/:id' => 'users#withdraw', as: 'withdraw'
 
@@ -105,8 +107,5 @@ Rails.application.routes.draw do
       get "join" => "groups#join"
     end
   end
-
-
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  end

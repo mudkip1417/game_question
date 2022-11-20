@@ -107,11 +107,11 @@
                             <div class="text-right">
 
                               <% if user_signed_in? && comment.user == current_user %>
-                                <%= link_to public_question_comment_path(comment.question), method: :delete do %>
+                                <%= link_to public_question_comment_path(comment.question.id, commentid), method: :delete do %>
                                   <i class="fa-solid fa-trash-can" style="color: red; font-size: 30px;"></i>
                                 <% end %>
                                 <% elsif admin_signed_in? %>
-                                <%= link_to "管理者削除", admin_question_comment_path(comment.question), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 20px;" %>
+                                <%= link_to "管理者削除", admin_question_comment_path(comment.question.id, comment.id), method: :delete, class: "btn btn-sm btn-danger p-0 p-1", style: "font-size: 20px;" %>
                               <% end %>
 
                             </div>

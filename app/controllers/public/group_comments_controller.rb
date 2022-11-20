@@ -10,7 +10,7 @@ class Public::GroupCommentsController < ApplicationController
   end
 
   def destroy
-    GroupComment.find(params[:id]).destroy
+    GroupComment.find(params[:id]).destroy!
     @group = Group.find(params[:group_id])
     redirect_to public_group_path(@group.id)
   end
