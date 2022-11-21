@@ -54,10 +54,9 @@ class Public::QuestionsController < ApplicationController
   end
 
   def search_tag
-    @tag_list = Tag.all
-    @tag_list = Tag.order("id DESC")
+    @tag_list = Tag.all.order("id DESC").page(params[:page]).per(100)
     @tag = Tag.find(params[:tag_id])
-    @questions = @tag.questions.order("id DESC")
+    @questions = @tag.questions.order("id DESC").page(params[:page]).per(100)
     @users = User.all
   end
 
