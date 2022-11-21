@@ -61,11 +61,6 @@ body .page-content {
   margin-right: 20px;
 }
 
-
-.up-time{
-  float: right;
-}
-
 .my-questions-title {
   padding-bottom: 60px;
 }
@@ -186,14 +181,13 @@ body .page-content {
   margin-right: 20px;
 }
 
-
-.up-time{
-  float: right;
-  font-size: 15px;
-}
-
 .my-questions-title {
   padding-bottom: 30px;
+}
+
+.question_user_name {
+  padding: 0px;
+  margin-bottom: 0px;
 }
 
 .comment-form{
@@ -230,10 +224,6 @@ body .page-content {
   background-color: #1f2122;
   color: white;
   border-radius: 23px;
-}
-
-p, .my-questions span {
-  font-size: 15px;
 }
 
 // 項目タイトル

@@ -35,10 +35,9 @@
 
                       <div class="col-lg-10 col-sm-10 col-xs-10 my-questions">
 
-                        <p>
-                          <span class="question-user-name" ><strong><%= @question.user.user_name %></strong></span>
-                          <span class="up-time text-muted"><%= @question.created_at.strftime("%Y/%m/%d/%H:%M") %></span>
-                        </p>
+                        <p class="question_user_name"><span class="question-user-name" ><strong><%= @question.user.user_name %></strong></span></p>
+
+                        <p class="text-right"><span class="up-time text-muted"><%= @question.created_at.strftime("%Y/%m/%d/%H:%M") %></span></p>
 
                         <div class="question-body">
 
@@ -137,10 +136,9 @@
 
                         <div class="col-lg-11 col-sm-11 col-xs-11 my-questions">
 
-                          <p>
-                            <span class="question-user-name" ><strong><%= comment.user.user_name %></strong></span>
-                            <span class="up-time text-muted"><%= comment.created_at.strftime("%Y年 %m月 %d日 %H:%M") %></span>
-                          </p>
+                          <p class="question_user_name"><span class="question-user-name" ><strong><%= comment.user.user_name %></strong></span></p>
+
+                          <p class="text-right"><span class="up-time text-muted"><%= comment.created_at.strftime("%Y/%m/%d/%H:%M") %></span></p>
 
                           <div class="question-body">
 
