@@ -59,19 +59,19 @@
 
                             <% if @group.owner_id == current_user.id %>
                               <span>
-                                <%= link_to edit_public_group_path(@group), class: "show-link" do %>
+                                <%= link_to edit_public_group_path(@group.id), class: "show-link" do %>
                                   <i class="fa-regular fa-pen-to-square" style="color: #ec6090; font-size: 30px;"></i>
                                 <% end %>
                               </span>
                             <% elsif @group.users.include?(current_user) %>
                               <span>
-                                <%= link_to public_group_path(@group), method: :delete do %>
+                                <%= link_to public_group_path(@group.id), method: :delete do %>
                                   <i class="fa-solid fa-right-from-bracket" style="color: red; font-size: 35px;"></i>
                                 <% end %>
                               </span>
                             <% else %>
                               <span>
-                                <%= link_to public_group_join_path(@group) do %>
+                                <%= link_to public_group_join_path(@group.id) do %>
                                   <i class="fa-solid fa-right-to-bracket" style="color: #ec6090; font-size: 35px;"></i>
                                 <% end %>
                               </span>
