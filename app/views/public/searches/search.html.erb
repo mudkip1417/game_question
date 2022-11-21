@@ -24,7 +24,7 @@
 
                     <div class="album py-2">
 
-                      <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>S</span>earch <span>U</span>sers</strong></h1>
+                      <h1 class="my-questions-title"><strong><i class="fa-solid fa-users"></i> <span>S</span>earch <span>U</span>sers</strong></h1>
 
                       <% @users.each do |user| %>
 
@@ -73,13 +73,7 @@
 
               </div>
 
-              <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-                  <div class="col-lg-6 col-sm-6 col-xs-6 pagi-nation">
-                    <%= paginate @users %>
-                  </div>
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-              </div>
+              <%= render 'share/paginate' , questions: @users %>
 
             </div>
 
@@ -127,13 +121,7 @@
 
               </div>
 
-              <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-                  <div class="col-lg-6 col-sm-6 col-xs-6 pagi-nation">
-                    <%= paginate @questions %>
-                  </div>
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-              </div>
+              <%= render 'share/paginate' , questions: @questions %>
 
             </div>
 
@@ -183,13 +171,7 @@
 
               </div>
 
-              <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-                  <div class="col-lg-6 col-sm-6 col-xs-6 pagi-nation">
-                    <%= paginate @tag_list %>
-                  </div>
-                <div class="col-lg-3 col-sm-3 col-xs-3"></div>
-              </div>
+              <%= render 'share/paginate' , questions: @tag_list %>
 
             </div>
 

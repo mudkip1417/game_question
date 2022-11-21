@@ -35,6 +35,11 @@ class Public::GroupsController < ApplicationController
     redirect_to public_group_path(@group.id)
   end
 
+  def member
+    @group = Group.find(params[:id])
+    @users = @group.users.order("id DESC").page(params[:page]).per(20)
+  end
+
 
   def edit
     @group = Group.find(params[:id])
