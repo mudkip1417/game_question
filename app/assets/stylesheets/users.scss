@@ -255,8 +255,12 @@ h2 {
   align-self: center!important;
 }
 
+.question_user_name {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 .up-time{
-  float: right;
 }
 
 .content-border {
@@ -264,6 +268,14 @@ h2 {
 }
 
 @media screen and (max-width:425px) {
+
+body .page-content {
+  margin-top: 5px;
+  background-color: #27292a;
+  padding: 5px;
+  border-radius: 23px;
+}
+
 .my-questions {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -276,12 +288,12 @@ h2 {
 
 .question-user-name{
   color: #ec6090;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .user_image_question {
   aspect-ratio: 1/1;
-  width: 100%;
+  width: 30%;
   object-fit: cover;
   object-position: 50% 50%;
   overflow: hidden;
@@ -316,6 +328,6 @@ h2 {
 }
 
 .up-time{
-  float: right;
+  font-size: 12px;
 }
 }

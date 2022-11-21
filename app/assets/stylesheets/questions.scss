@@ -120,8 +120,12 @@ label {
   margin-right: 20px;
 }
 
+.question_user_name {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 .up-time{
-  float: right;
 }
 
 @media screen and (max-width:425px) {
@@ -184,11 +188,7 @@ label {
 }
 
 .up-time{
-  float: right;
-}
-
-p, .my-questions span {
-  font-size: 20px;
+  font-size: 12px;
 }
 }
 
@@ -251,12 +251,6 @@ p, .my-questions span {
 }
 
 .up-time{
-  float: right;
-  font-size: 15px;
-}
-
-p, .my-questions span {
-  font-size: 15px;
 }
 
 .up-button input, .up-button a {

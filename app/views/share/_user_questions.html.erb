@@ -10,10 +10,9 @@
 
     <div class="col-lg-10 col-sm-10 col-xs-10 my-questions">
 
-      <p>
-        <span class="question-user-name" ><strong><%= user.user_name %></strong></span>
-        <span class="up-time text-muted"><%= question.created_at.strftime("%Y/%m/%d/%H:%M") %></span>
-      </p>
+      <p class="question_user_name"><span class="question-user-name" ><strong><%= user.user_name %></strong></span></p>
+
+      <p class="text-right"><span class="up-time text-muted"><%= question.created_at.strftime("%Y/%m/%d/%H:%M") %></span></p>
 
       <div class="question-body">
 
