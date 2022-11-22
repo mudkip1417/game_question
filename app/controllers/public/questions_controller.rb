@@ -36,11 +36,18 @@ class Public::QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
+    @tag_list = @question.tags.pluck(:tag_name).join(',')
   end
 
   def update
     @question = Question.find(params[:id])
+    @tag_list = params[:question][:tag_name].split(',')
     if @question.update(question_params)
+      @old_relations = Tagmap.where(question_id: @question.id)
+      @old_relations.each do |relation|
+        relation.delete
+      end
+      @question.save_tag(@tag_list)
       redirect_to public_question_path(@question.id)
     else
       render :edit
