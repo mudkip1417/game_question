@@ -22,18 +22,11 @@
 
                   <div class="album py-2">
 
-                    <h1 class="tag-title"><strong><i class="fa-solid fa-tags"></i> <span>T</span>ags</strong></h1>
-                    <h5>タグが<strong class="tag-name" style="color: #ec6090;"><%=@tag.tag_name %></strong>の投稿一覧</h5>
-
-                    <div class="tag-list">
-
-                      <%= render 'share/tags' , tag_list: @tag_list %>
-
-                    </div>
-
-                    <div><br></div>
-
                     <h1 class="my-questions-title"><strong><i class="fa-solid fa-clipboard-question"></i> <span>E</span>veryone's <span>Q</span>uestions</strong></h1>
+
+                    <h3 style="text-align: center;">タグが<strong class="tag-name" style="color: #ec6090;"><%=@tag.tag_name %></strong>の投稿一覧</h3>
+
+                    <br>
 
                     <%= render 'share/questions' , questions: @questions %>
 

@@ -1,6 +1,6 @@
 <% tag_list.each do |list| %>
   <%= link_to public_search_tag_path(tag_id: list.id), class:"btn btn-outline-light" do %>
-    <span>
+    <span style="padding: ">
       <i class="fas fa-tag"></i> <%= list.tag_name %><%= "(#{list.questions.count})" %>
     </span>
   <% end %>

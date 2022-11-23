@@ -16,6 +16,7 @@ class Question < ApplicationRecord
     bookmarks.where(user_id: user).exists?
   end
 
+  # 検索機能
   def self.looks(search, word)
     # if search == "perfect_match"
     #   @question = Question.where("title LIKE?","#{word}")
@@ -28,6 +29,7 @@ class Question < ApplicationRecord
       # @question = Question.all
   end
 
+  # タグ検索機能
   def save_tag(sent_tags)
   # タグが存在していれば、タグの名前を配列として全て取得
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?

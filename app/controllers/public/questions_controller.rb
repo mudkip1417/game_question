@@ -6,7 +6,7 @@ class Public::QuestionsController < ApplicationController
     @users = User.all
     @questions = Question.all.order("id DESC").page(params[:page]).per(20)
     # @questions = Question.order("id DESC").page(params[:page]).per(20)
-    @tag_list = Tag.find(Tagmap.group(:tag_id).order('count(question_id) desc').limit(100).pluck(:tag_id))
+    @tag_list = Tag.find(Tagmap.group(:tag_id).order('count(question_id) desc').limit(22).pluck(:tag_id))
   end
 
   def new
@@ -60,7 +60,7 @@ class Public::QuestionsController < ApplicationController
   end
 
   def search_tag
-    @tag_list = Tag.find(Tagmap.group(:tag_id).order('count(question_id) desc').limit(100).pluck(:tag_id))
+    @tag_list = Tag.find(Tagmap.group(:tag_id).order('count(question_id) desc').limit(22).pluck(:tag_id))
     @tag = Tag.find(params[:tag_id])
     @questions = @tag.questions.order("id DESC").page(params[:page]).per(20)
     @users = User.all

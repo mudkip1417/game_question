@@ -32,7 +32,7 @@ class Public::SearchesController < ApplicationController
     elsif @range == "Question"
       @questions = Question.looks(params[:search], params[:word]).order("id DESC").page(params[:page]).per(20)
     else
-      @tag_list = Tag.looks(params[:search], params[:word]).order("id DESC").page(params[:page]).per(100)
+      @tag_list = Tag.looks(params[:search], params[:word]).order("id ASC").page(params[:page]).per(100)
     end
   end
 
