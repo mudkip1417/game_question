@@ -68,28 +68,6 @@
                                 <% end %>
                               </span>
 
-                              <span>
-
-                                <% if bookmark.question.bookmarked_by?(current_user) %>
-
-                                  <td>
-                                    <%= link_to public_question_bookmarks_path(bookmark.question.id), method: :delete do %>
-                                      <i class="fa-solid fa-bookmark"  style="color: #ec6090; font-size: 30px;"></i>
-                                    <% end %>
-                                  </td>
-
-                                <% else %>
-
-                                  <td>
-                                    <%= link_to public_question_bookmarks_path(bookmark.question.id), method: :post do %>
-                                      <i class="fa-regular fa-bookmark" style="color: #ec6090; font-size: 30px;"></i>
-                                    <% end %>
-                                  </td>
-
-                                <% end %>
-
-                              </span>
-
                             </div>
 
                           </div>
