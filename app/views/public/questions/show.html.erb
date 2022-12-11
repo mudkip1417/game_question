@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'show_questions', :media => "all" %>
 <%= stylesheet_link_tag 'titles', :media => "all" %>
+<%= stylesheet_link_tag 'tags', :media => "all" %>
 
 <div class="container">
 
@@ -55,6 +56,12 @@
                                 <%= image_tag image, style: "border-radius: 20px;", class:'question-image' %>
                               <% end %>
                             <% end %>
+                          </div>
+
+                          <div class="tag-list">
+
+                            <%= render 'share/tags' , tag_list: @tag_list %>
+
                           </div>
 
                           <div class="text-right">

@@ -28,6 +28,7 @@ class Public::QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @tag_list = @question.tags
     @comment = Comment.new
     @comment = Comment.all
     @comments = @question.comments
