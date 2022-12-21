@@ -33,8 +33,11 @@
                     <li>Favorite Game <span><%= @user.favorite_game %></span></li>
                     <li>Introduction <p class="users-introduction"><%= @user.introduction %></p></li>
                     <p class="main-border-button">
-                      <%= link_to edit_public_user_path, class: "btn btn-outline-light", style: "color: #ec6090;" do %>
-                       Edit User
+                      <% if @user. = current_user %>
+                        <%= link_to edit_public_user_path, class: "btn btn-outline-light", style: "color: #ec6090;" do %>
+                         Edit User
+                        <% end %>
+                      <% else %>
                       <% end %>
                     </p>
                   </ul>

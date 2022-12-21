@@ -9,6 +9,7 @@ class Public::GroupsController < ApplicationController
   def show
     @question = Question.all
     @group = Group.find(params[:id])
+    @users = @group.users
     @group_comment = GroupComment.new
     @group_comment = GroupComment.all
     @group_comments = @group.group_comments
