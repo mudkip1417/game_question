@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    attributes:
+      question: 質問
+        title: タイトル
+        question: 質問
+      group: グループ
+        name: グループ名
+        introduction: 紹介文
+      user: ユーザー
+        user_name: ユーザー名
+  views:
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '前'
+      next: '次'
+      truncate: '...'
+  activemodel:   # Formオブジェクトを用いた場合
+     attributes:
+       order_object:
+         : 郵便番号

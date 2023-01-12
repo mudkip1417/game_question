@@ -30,3 +30,5 @@
 　※著作権の問題があるのでゲームのキャラクターやイラスト等の画像、動画の掲載は行いません。
 ## 実装機能リストURL
   https://docs.google.com/spreadsheets/d/1Z3JPJMIMwQmTCdskBKgW1pX3gABD5XtGd4EU_B23zv8/edit?usp=sharing
+## ER図
+  https://drive.google.com/file/d/1-WhoFvmtLAl3jzJKObb1YnVwWFfKYDpJ/view?usp=sharing
